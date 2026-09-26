@@ -1,6 +1,6 @@
 # ivault-web
 
-The public website for [iVault](https://ivaultkh.github.io/ivault-web/): landing page, privacy policy and support page. Plain HTML and CSS, no build step, served by GitHub Pages. Fonts (IBM Plex Sans/Mono, Noto Sans Khmer; SIL Open Font License) are self-hosted in `assets/fonts/`, so pages make no third-party requests.
+The public website for [iVault](https://ivaultkh.github.io/ivault-web/): landing page, privacy policy and support page. Plain HTML and CSS, no build step, served by GitHub Pages. Fonts (IBM Plex Sans/Mono, Bricolage Grotesque; SIL Open Font License) are self-hosted in `assets/fonts/`, so pages make no third-party requests.
 
 | Page | URL | Used for |
 |---|---|---|

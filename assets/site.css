@@ -25,8 +25,8 @@
   --status-running: oklch(0.52 0.13 235);
   --status-warn: oklch(0.55 0.13 70);
   --shadow-window: 0 1px 2px oklch(0 0 0 / 0.06), 0 24px 48px -16px oklch(0.3 0.05 290 / 0.28);
-  --font-sans: "IBM Plex Sans", "Noto Sans Khmer", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, "Noto Sans Khmer", monospace;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   color-scheme: light;
 }
@@ -453,3 +453,54 @@ p { text-wrap: pretty; }
 .site-footer nav { flex-wrap: wrap; gap: 8px 20px; }
 .site-footer nav a { display: inline-flex; align-items: center; gap: 6px; }
 .site-footer nav .icon, .site-footer nav .brand-logo { width: 14px; height: 14px; }
+
+/* ---------- brand intro (assets/intro.js) ---------- */
+html.intro-on, html.intro-on body { background: #0b0d14; }
+html.intro-on body > :not(.brand-intro) { visibility: hidden; }
+.brand-intro {
+  position: fixed; inset: 0; z-index: 100; display: grid; place-items: center;
+  background: #0b0d14; cursor: pointer;
+  transition: opacity 320ms var(--ease-out), filter 320ms var(--ease-out);
+}
+.brand-intro.leaving { opacity: 0; filter: blur(6px); pointer-events: none; }
+.brand-intro .stage { position: relative; display: flex; flex-direction: column; align-items: center; }
+.brand-intro svg { position: relative; width: 168px; height: 168px; overflow: visible; }
+.brand-intro .ring {
+  fill: none; stroke: #6e51f2; stroke-width: 30; stroke-linecap: round;
+  stroke-dasharray: 100; stroke-dashoffset: 100;
+  transform: rotate(-90deg); transform-origin: 256px 256px;
+  animation: intro-dial 820ms var(--ease-out) forwards;
+}
+.brand-intro .inner {
+  fill: none; stroke: #6e51f2; stroke-width: 10; opacity: 0;
+  transform: scale(0.82); transform-origin: 256px 256px;
+  animation: intro-settle 520ms var(--ease-out) 380ms forwards;
+}
+.brand-intro .play {
+  fill: #6e51f2; stroke: #6e51f2; stroke-width: 18; stroke-linejoin: round;
+  opacity: 0; transform: scale(0.4) rotate(-30deg); transform-origin: 262px 256px;
+  animation: intro-pop 560ms cubic-bezier(0.34, 1.56, 0.64, 1) 640ms forwards;
+}
+.brand-intro .glow {
+  position: absolute; left: 50%; top: 84px; width: 520px; height: 520px; margin-left: -260px; margin-top: -260px;
+  border-radius: 50%; pointer-events: none; opacity: 0;
+  background: radial-gradient(closest-side, rgba(110, 81, 242, 0.5), rgba(110, 81, 242, 0.14) 60%, transparent);
+  animation: intro-bloom 800ms var(--ease-out) 760ms forwards;
+}
+.brand-intro .word {
+  position: relative; margin-top: 22px; color: #fafafa;
+  font: 700 34px/1 var(--font-display); letter-spacing: -0.02em;
+  opacity: 0; transform: translateY(14px);
+  animation: intro-rise 420ms var(--ease-out) 1000ms forwards;
+}
+.brand-intro.reduce .ring { stroke-dashoffset: 0; }
+.brand-intro.reduce .inner { opacity: 0.45; transform: none; }
+.brand-intro.reduce .play, .brand-intro.reduce .word { opacity: 1; transform: none; }
+.brand-intro.reduce * { animation: none !important; }
+.brand-intro.reduce .glow { display: none; }
+@keyframes intro-dial { to { stroke-dashoffset: 0; transform: rotate(270deg); } }
+@keyframes intro-settle { to { opacity: 0.45; transform: scale(1); } }
+@keyframes intro-pop { to { opacity: 1; transform: none; } }
+@keyframes intro-bloom { 0% { opacity: 0; } 35% { opacity: 1; } 100% { opacity: 0.4; } }
+@keyframes intro-rise { to { opacity: 1; transform: none; } }
+
