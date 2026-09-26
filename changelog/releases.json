@@ -1,0 +1,50 @@
+[
+  {
+    "version": "1.0.0",
+    "date": "2026-09-26",
+    "summary": "The first public release, and the first on the Microsoft Store.",
+    "features": [
+      "Storage you already have: Amazon S3, Cloudflare R2 and MinIO, a local folder or NAS, Telegram, GitHub (served through jsDelivr), Google Drive, OneDrive and WebDAV. Use several, and pick one per video.",
+      "Move a published video from one storage to another.",
+      "Batches: group a whole season, run it in order, and see every episode's stage on a live board.",
+      "Pause and resume a video or a whole batch, and convert several videos at once.",
+      "Subtitles (.srt, .vtt) in any language and a poster of your own, also added later to a video that is already online.",
+      "Series catalog in English and Khmer, with TMDB lookup and Gemini translation using your own keys.",
+      "Telegram with just a bot token and a channel ID, and those videos play in iVault's own preview.",
+      "Windows builds for x64 and Arm64, on the Microsoft Store and as a direct installer."
+    ],
+    "fixes": [
+      "A failed Telegram upload resumes with only the files that are left, instead of sending the whole video again.",
+      "Converting on Windows works: two Windows-only problems made FFmpeg stop with \"Permission denied\"."
+    ],
+    "notes": [
+      "On Windows, a pause takes effect after the current step (for example, when encoding finishes) rather than instantly.",
+      "Telegram accepts files up to 20 MB each, so iVault publishes one quality there instead of several.",
+      "Removing a video from iVault, or moving it to other storage, does not delete the files already uploaded.",
+      "A Google Drive connection needs renewing every 7 days while your Google OAuth app is in testing mode; OneDrive about every 90 days."
+    ]
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-09-22",
+    "summary": "Internal preview. Not published.",
+    "features": [
+      "Convert a video to HLS at 360p, 480p, 720p and 1080p with FFmpeg, and get one master.m3u8 link.",
+      "Upload to Amazon S3, Cloudflare R2, MinIO or a local folder, then check every file is reachable before calling the job done.",
+      "Dashboard, Library, video details with a preview player, and a step-by-step New video wizard.",
+      "A transfer dock with live progress, cancel and retry.",
+      "Storage keys kept in the system keychain, never in a file.",
+      "One-click FFmpeg install on macOS and Linux.",
+      "Series catalog export for wuxia-web."
+    ],
+    "fixes": [
+      "A failed check now names the files that are missing, instead of only counting them.",
+      "Exporting the catalog no longer overwrites a series' other episodes.",
+      "A queued video can be removed from the Library."
+    ],
+    "notes": [
+      "On Windows, FFmpeg is installed by hand.",
+      "No pause yet, and no time-left estimate."
+    ]
+  }
+]

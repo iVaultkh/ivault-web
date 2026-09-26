@@ -45,47 +45,14 @@
       <h1>Changelog</h1>
       <p class="meta">What changed in each version of iVault. <a href="../download/">Download the latest</a>.</p>
 
-      <section class="release" id="v1.0.0" aria-labelledby="v1.0.0-title">
-        <div class="release-head">
-          <h2 id="v1.0.0-title">1.0.0</h2>
-          <span class="badge is-ready">Latest</span>
-          <time datetime="2026-09-26">26 September 2026</time>
-        </div>
-        <p>The first public release, and the first on the Microsoft Store.</p>
-
-        <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg>What iVault does</h3>
-        <ul>
-          <li><b>Video to a streaming link.</b> Drop in a video file and iVault encodes it to HLS at 360p, 480p, 720p and 1080p with FFmpeg, uploads it, checks every file is reachable, and gives you one <code>master.m3u8</code> link for any player or website.</li>
-          <li><b>Storage you already have.</b> Amazon S3, Cloudflare R2 and MinIO, a local folder or NAS, Telegram, GitHub (served through jsDelivr), Google Drive, OneDrive and WebDAV. Use several and pick one per video; move a video from one to another later.</li>
-          <li><b>A whole season at once.</b> Group episodes into batches, convert several videos in parallel, and pause and resume a job or a whole batch.</li>
-          <li><b>Subtitles and posters.</b> Attach <code>.srt</code> or <code>.vtt</code> subtitles in any language and a picture of your own. Add them later to a video that is already published.</li>
-          <li><b>A catalog for your site.</b> Organise episodes into series with English and Khmer titles, look up details on TMDB, translate to Khmer with Gemini using your own key, and export the catalog.</li>
-          <li><b>Telegram without extra setup.</b> A Telegram channel works with just a bot token and a channel ID, and iVault plays those videos in its own preview.</li>
-        </ul>
-
-        <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fixed</h3>
-        <ul>
-          <li>A failed Telegram upload now resumes with only the files that are left, instead of sending the whole video again.</li>
-          <li>Converting on Windows works: two Windows-only problems made FFmpeg stop with "Permission denied".</li>
-        </ul>
-
-        <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>Good to know</h3>
-        <ul>
-          <li>On Windows, a pause takes effect after the current step (for example, once encoding finishes) rather than instantly.</li>
-          <li>Telegram accepts files up to 20 MB each, so iVault publishes one quality there instead of several.</li>
-          <li>Removing a video from iVault, or moving it to other storage, does not delete the files already uploaded.</li>
-          <li>A Google Drive connection needs renewing every 7 days while your Google OAuth app is in testing mode; OneDrive about every 90 days.</li>
-        </ul>
-      </section>
-
-      <p class="meta" style="margin-top:48px">Earlier builds were internal previews and were not published.</p>
+      <div id="releases" aria-live="polite">
+        <noscript><p>Turn on JavaScript to see the release notes, or read them on <a href="https://github.com/iVaultkh/ivault-web/releases">GitHub Releases</a>.</p></noscript>
+      </div>
     </article>
 
     <aside class="toc" aria-label="Versions">
       <p>Versions</p>
-      <ul>
-        <li><a href="#v1.0.0">1.0.0</a></li>
-      </ul>
+      <ul id="versions"></ul>
     </aside>
   </main>
 
@@ -95,5 +62,6 @@
       <nav aria-label="Footer"><a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .71-1.53l7-6a2 2 0 0 1 2.58 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a><a href="../download/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>Download</a><a href="./"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h.01M3 18h.01M3 6h.01M8 12h13M8 18h13M8 6h13"/></svg>Changelog</a><a href="../support/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24m5.66 0 4.24-4.24m-4.24 9.9 4.24 4.24m-9.9 0-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>Support</a><a href="../privacy/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Privacy</a><a href="https://github.com/iVaultkh/ivault-web"><i class="brand-logo" style="--logo:url(brands/github.svg)" aria-hidden="true"></i>GitHub</a></nav>
     </div>
   </footer>
+  <script src="../assets/changelog.js" data-src="releases.json"></script>
 </body>
 </html>
