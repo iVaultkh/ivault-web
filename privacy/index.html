@@ -53,7 +53,7 @@
         <p class="lede">iVault is a desktop app with no account and no server of its own. This policy sets out what stays on your computer, what goes to the services you connect, and what reaches us: nothing.</p>
         <ul class="policy-meta">
           <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Effective <b><time datetime="2026-09-26">26 September 2026</time></b></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>Version <b>1.0</b></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>Version <b>1.1</b></li>
           <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>iVault for <b>Windows, macOS and Linux</b>, including the Microsoft Store version</li>
         </ul>
 
@@ -115,6 +115,7 @@
           <ul>
             <li><strong>Your library and jobs</strong>: file paths, series and episode details, upload progress and the links iVault produced, in a local database in the app's data folder.</li>
             <li><strong>Encoded video</strong>: temporary HLS files while a job runs.</li>
+            <li><strong>Catalog exports</strong>: when you export a series to wuxia-web, iVault writes JSON files into the folder you chose on your computer. Nothing is uploaded; you commit and publish them yourself.</li>
             <li><strong>Credentials</strong>: storage access keys, bot tokens, OAuth refresh tokens and API keys, stored in your operating system's secure credential store (Windows Credential Manager, macOS Keychain or the Linux Secret Service).</li>
           </ul>
         </section>
@@ -132,7 +133,7 @@
               <div class="flow-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></div>
               <div class="flow-node">
                 <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>Services you connect</h3>
-                <ul><li>Your storage provider</li><li>Google or Microsoft sign-in</li><li>TMDB and Gemini, with your own keys</li><li>Your website, when you publish</li></ul>
+                <ul><li>Your storage provider</li><li>Google or Microsoft sign-in</li><li>TMDB and Gemini, with your own keys</li></ul>
               </div>
             </div>
             <div class="flow-none">
@@ -149,8 +150,7 @@
                 <tr><td><svg class="icon svc" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><path d="M6 16h.01M10 16h.01"/></svg>Your storage provider<small>Cloudflare R2, Amazon S3, MinIO, WebDAV, GitHub (and jsDelivr for public GitHub links), Google Drive, OneDrive or Telegram</small></td><td>When you connect it and when you upload</td><td>Your encoded video segments, playlists and file lists, with the credentials you entered for that provider.</td></tr>
                 <tr><td><svg class="icon svc" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>Google or Microsoft sign-in</td><td>When you connect Google Drive or OneDrive</td><td>A standard OAuth sign-in in your browser. The reply comes back to the app on your own computer (127.0.0.1); iVault keeps only the resulting token, in the keychain.</td></tr>
                 <tr><td><i class="brand-logo svc" style="--logo:url(brands/themoviedatabase.svg)" aria-hidden="true"></i>The Movie Database (TMDB)</td><td>When you search for a series, with your own TMDB key</td><td>Your search text. Posters and details come back.</td></tr>
-                <tr><td><i class="brand-logo svc" style="--logo:url(brands/googlegemini.svg)" aria-hidden="true"></i>Google Gemini</td><td>When you ask for a Khmer title and description, with your own Gemini key</td><td>The English title and overview of that series. The generated text is a suggestion you review before saving.</td></tr>
-                <tr><td><svg class="icon svc" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>Your website<small>For example WordPress or a catalog repository</small></td><td>When you publish</td><td>The series details and the stream link you chose to publish.</td></tr>
+                <tr><td><i class="brand-logo svc" style="--logo:url(brands/googlegemini.svg)" aria-hidden="true"></i>Google Gemini</td><td>When you ask for a Khmer title and description, with your own Gemini key</td><td>The English title, description and year of that series. The generated text is a suggestion you review before saving.</td></tr>
                 <tr><td><i class="brand-logo svc" style="--logo:url(brands/ffmpeg.svg)" aria-hidden="true"></i>FFmpeg download sites<small>evermeet.cx on macOS, johnvansickle.com on Linux</small></td><td>Only if you ask iVault to download FFmpeg. On Windows you download it yourself</td><td>An ordinary file download request.</td></tr>
               </tbody>
             </table>
@@ -165,7 +165,7 @@
         <section id="choices">
           <h2>Your choices</h2>
           <ul>
-            <li><strong>Remove a service</strong>: delete the provider in iVault's Storage screen, and its credentials are deleted from your keychain with it.</li>
+            <li><strong>Remove a service</strong>: on iVault's Storage screen, choose <strong>Disconnect…</strong> from the provider's menu, and its credentials are deleted from your keychain with it.</li>
             <li><strong>Remove everything</strong>: uninstall the app and delete its data folder.</li>
             <li><strong>Requests to us</strong>: because we hold no data about you, there is nothing for us to export, correct or delete. For data held by a service you connected, use that service's own tools.</li>
           </ul>
@@ -185,6 +185,7 @@
           <h2>Changes to this policy</h2>
           <p>If the app starts handling data differently, this page is updated before that version ships, and the change is listed here.</p>
           <ol class="changelog">
+            <li><time datetime="2026-09-26">26 Sep 2026 · v1.1</time>Corrected: exporting a series to wuxia-web writes files on your computer and sends nothing, so “Your website” is no longer listed as a service. Gemini also receives the year.</li>
             <li><time datetime="2026-09-26">26 Sep 2026 · v1.0</time>First published, for iVault 1.0.</li>
           </ol>
         </section>

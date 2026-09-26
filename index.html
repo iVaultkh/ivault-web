@@ -101,7 +101,7 @@
               </div>
               <div class="job-meta">
                 <svg class="icon spin is-running" viewBox="0 0 24 24" aria-hidden="true" style="width:14px;height:14px"><path d="M21 12a9 9 0 1 1-6.22-8.56"/></svg>
-                <span>Encoding 1080p</span>
+                <span>Converting 1080p</span>
                 <span class="progress" style="--v:31%"><i></i></span>
               </div>
             </li>
@@ -113,7 +113,7 @@
               </div>
               <div class="job-meta">
                 <svg class="icon is-warn" viewBox="0 0 24 24" aria-hidden="true" style="width:14px;height:14px"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                <span class="grow">Waiting for Telegram's rate limit · resumes in <span class="tabular">38 s</span></span>
+                <span class="grow">Retrying in <span class="tabular">38 s</span> · Telegram asked iVault to slow down</span>
               </div>
             </li>
           </ul>
@@ -125,15 +125,15 @@
       <div class="container">
         <div class="section-head">
           <h2>From file to link in five stages</h2>
-          <p>These are the stages iVault shows on every job. Each one is checkpointed, so a failed job resumes where it stopped instead of starting again.</p>
+          <p>These are the stages iVault shows on every job. Each one is checkpointed, so a failed upload resumes where it stopped instead of starting again.</p>
         </div>
         <ol class="pipeline">
           <li>
-            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Probe</div>
+            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Analyse</div>
             <p>Reads the file's length, streams and resolution with ffprobe.</p>
           </li>
           <li>
-            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>Encode</div>
+            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>Convert</div>
             <p>FFmpeg on your machine makes HLS at 360p, 480p, 720p and 1080p.</p>
           </li>
           <li>
@@ -141,11 +141,11 @@
             <p>Segments go straight to the storage you connected, within its limits.</p>
           </li>
           <li>
-            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>Publish</div>
-            <p>Adds the series and episode to the catalog your site reads.</p>
+            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Verify</div>
+            <p>Checks every file is reachable at your public URL before calling it done.</p>
           </li>
           <li>
-            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Done</div>
+            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Ready</div>
             <p>One stable <code>master.m3u8</code> link. Copy it into any player.</p>
           </li>
         </ol>

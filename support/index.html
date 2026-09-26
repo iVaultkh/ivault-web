@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>iVault Support</title>
-  <meta name="description" content="Get help with iVault: report a problem, ask a question, and answers to common setup questions.">
+  <title>iVault Help</title>
+  <meta name="description" content="iVault help: getting started, FFmpeg, setting up every storage provider, converting and uploading, the wuxia-web catalog, error messages and shortcuts.">
   <script src="../assets/theme.js"></script>
+  <script src="../assets/support.js" defer></script>
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
@@ -14,8 +15,8 @@
   <link rel="canonical" href="https://ivaultkh.github.io/ivault-web/support/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="iVault">
-  <meta property="og:title" content="iVault Support">
-  <meta property="og:description" content="Get help with iVault: report a problem, ask a question, and answers to common setup questions.">
+  <meta property="og:title" content="iVault Help">
+  <meta property="og:description" content="Getting started, storage setup, converting and uploading, error messages and shortcuts.">
   <meta property="og:url" content="https://ivaultkh.github.io/ivault-web/support/">
   <meta property="og:image" content="https://ivaultkh.github.io/ivault-web/assets/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -41,74 +42,463 @@
     </div>
   </header>
 
-  <main class="container docs">
-    <article class="prose">
-      <h1>Support</h1>
-      <p class="meta">Most answers are below. If yours isn't, open an issue and we'll pick it up there.</p>
-
-      <div class="card contact">
-        <div>
-          <h2>Report a problem or ask a question</h2>
-          <p>Include your iVault version (Settings → About), your operating system, your storage provider and what you expected to happen. Remove access keys, tokens and passwords from anything you paste.</p>
+  <main>
+    <section class="help-hero">
+      <div class="container">
+        <h1>How can we help?</h1>
+        <p class="lede">Setup, storage, converting and every message iVault can show you, in one place.</p>
+        <div class="help-search">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="help-q" type="search" placeholder="Search help, e.g. Telegram, FFmpeg, Access denied" autocomplete="off" aria-label="Search help">
+          <kbd aria-hidden="true">/</kbd>
         </div>
-        <a class="btn btn-default" href="https://github.com/iVaultkh/ivault-web/issues/new">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-          Open an issue
-        </a>
+        <p class="help-count" id="help-count" aria-live="polite"></p>
       </div>
+    </section>
 
-      <h2 id="faq">Common questions</h2>
-      <div class="accordion">
-        <details open>
-          <summary><span class="q"><svg class="icon lead" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18M3 7.5h4M3 12h18M3 16.5h4M17 3v18M17 7.5h4M17 16.5h4"/></svg>iVault says FFmpeg is missing</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-          <div class="panel">
-            <p>iVault encodes video with FFmpeg on your computer.</p>
-            <ol>
-              <li><strong>macOS and Linux:</strong> Settings → FFmpeg can download a verified build for you.</li>
-              <li><strong>Windows:</strong> download the “release essentials” zip from <a href="https://www.gyan.dev/ffmpeg/builds/">gyan.dev</a>, unzip it, and in Settings → FFmpeg choose its <code>bin</code> folder (the one containing <code>ffmpeg.exe</code> and <code>ffprobe.exe</code>).</li>
-            </ol>
-          </div>
-        </details>
-        <details>
-          <summary><span class="q"><i class="brand-logo lead" style="--logo:url(brands/telegram.svg)" aria-hidden="true"></i>How do I connect Telegram?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-          <div class="panel">
-            <ol>
-              <li>Create a bot with <a href="https://t.me/BotFather">@BotFather</a> and copy its token.</li>
-              <li>Make the bot an administrator of a private channel.</li>
-              <li>Find the channel ID: post any message in the channel and forward it to a bot such as @userinfobot, or open the channel in Telegram Web. The ID is the number starting with <code>-100</code>.</li>
-              <li>Paste the token and the ID into Storage → Telegram.</li>
-            </ol>
-          </div>
-        </details>
-        <details>
-          <summary><span class="q"><svg class="icon lead" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>Uploads to Telegram are slow</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-          <div class="panel"><p>Telegram limits bots to roughly 20 messages a minute and about 20 MB per downloadable file. iVault stays under those limits on purpose, so a long episode takes a while. The job resumes where it stopped if you close the app.</p></div>
-        </details>
-        <details>
-          <summary><span class="q"><svg class="icon lead" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>A job failed halfway</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-          <div class="panel"><p>Every stage is checkpointed. Press Retry on the job: iVault skips encoding and segments that already uploaded.</p></div>
-        </details>
-        <details>
-          <summary><span class="q"><svg class="icon lead" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>Where is my data?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-          <div class="panel"><p>On your computer, and in the storage you connected. See the <a href="../privacy/">privacy policy</a> for details.</p></div>
-        </details>
-      </div>
-    </article>
+    <div class="container policy help">
+      <nav class="toc" aria-label="Topics">
+        <p>Topics</p>
+        <ol>
+          <li><a href="#start">Getting started</a></li>
+          <li><a href="#ffmpeg">FFmpeg</a></li>
+          <li><a href="#storage">Storage setup</a></li>
+          <li><a href="#convert">Converting and uploading</a></li>
+          <li><a href="#catalog">Catalog and wuxia-web</a></li>
+          <li><a href="#errors">Error messages</a></li>
+          <li><a href="#settings">Settings, data and shortcuts</a></li>
+          <li><a href="#contact">Still stuck?</a></li>
+        </ol>
+      </nav>
 
-    <nav class="toc" aria-label="Related">
-      <p>Related</p>
-      <ul>
-        <li><a href="#faq">Common questions</a></li>
-        <li><a href="../privacy/">Privacy policy</a></li>
-        <li><a href="../#how">How iVault works</a></li>
-      </ul>
-    </nav>
+      <article class="prose">
+        <p class="help-empty" id="help-empty" hidden>No answers match “<span></span>”. Try another word, or <a href="https://github.com/iVaultkh/ivault-web/issues/new">ask us on GitHub</a>.</p>
+
+        <section id="start">
+          <h2>Getting started</h2>
+          <div class="accordion">
+            <details id="first-run">
+              <summary>What does the first-run setup ask for?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>The first time iVault opens, it walks you through five steps: <strong>Welcome</strong>, <strong>FFmpeg</strong>, <strong>Storage</strong>, <strong>Catalog</strong> and <strong>Finish</strong>. Press <strong>Skip setup</strong> at any point to do it later.</p>
+                <ul>
+                  <li><strong>FFmpeg</strong> checks for the video encoder. See <a href="#ffmpeg-windows">FFmpeg on Windows</a> or <a href="#ffmpeg-mac-linux">on macOS and Linux</a>.</li>
+                  <li><strong>Storage</strong> connects your first place to upload to. Setup offers S3 / R2 / MinIO, Local / NAS, GitHub and WebDAV; add Telegram, Google Drive or OneDrive later from the <strong>Storage</strong> screen.</li>
+                  <li><strong>Catalog</strong> asks for your wuxia-web folder. Skip it if you only need stream links.</li>
+                </ul>
+                <p>To see it again: <strong>Settings → General → Run setup again</strong>. Nothing is reset.</p>
+              </div>
+            </details>
+            <details id="first-video">
+              <summary>How do I turn my first video into a link?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <ol>
+                  <li>Press <strong>New Video</strong> (<kbd>Ctrl</kbd> <kbd>N</kbd>), or drop video files anywhere on the window.</li>
+                  <li><strong>Source</strong>: add files with <strong>Browse…</strong> or drag and drop, and give each one a <strong>Title</strong>. Series, episode, subtitles and poster are optional.</li>
+                  <li><strong>Quality</strong>: keep the sizes you want, from 360p to 1080p.</li>
+                  <li><strong>Storage</strong>: choose where to upload.</li>
+                  <li><strong>Review</strong>: press <strong>Convert &amp; upload</strong>.</li>
+                </ol>
+                <p>When the job shows <strong>Ready</strong>, open it and press <strong>Copy URL</strong> in the <strong>Stream URL</strong> panel, or right-click it in the Library and choose <strong>Copy stream URL</strong>. That <code>master.m3u8</code> link plays in any HLS player.</p>
+              </div>
+            </details>
+            <details id="leave-running">
+              <summary>Can I close the window while videos are converting?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>You can leave the New Video screen as soon as the videos are queued. Work carries on in the background and shows on the <strong>Dashboard</strong>, <strong>Library</strong> and <strong>Batches</strong> screens.</p>
+                <p>Quitting the app is different, so iVault asks first (<strong>Quit while converting?</strong>). If you quit anyway, uploads carry on where they stopped next time, but a conversion that was running starts again from the beginning. When iVault reopens it tells you <strong>Resumed N interrupted jobs</strong>.</p>
+              </div>
+            </details>
+            <details id="formats">
+              <summary>Which files can I add, and what comes out?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <ul>
+                  <li><strong>Video</strong>: mp4, mkv, mov, avi, webm, m4v, ts.</li>
+                  <li><strong>Subtitles</strong>: srt, vtt, txt, one file per language. iVault converts them to WebVTT.</li>
+                  <li><strong>Posters</strong>: jpg, png, webp.</li>
+                </ul>
+                <p>The output is HLS (H.264 video, AAC audio, 6-second segments) at 360p, 480p, 720p and 1080p. iVault never upscales: sizes taller than your source are skipped.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="ffmpeg">
+          <h2>FFmpeg</h2>
+          <div class="accordion">
+            <details id="ffmpeg-windows">
+              <summary>Install FFmpeg on Windows<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>iVault converts video with FFmpeg, which is not bundled with the app.</p>
+                <ol>
+                  <li>Open <strong>Settings → Conversion</strong>. Under FFmpeg, press <strong>Open gyan.dev</strong>, or go to <a href="https://www.gyan.dev/ffmpeg/builds/">gyan.dev/ffmpeg/builds</a>.</li>
+                  <li>Download the <strong>release essentials</strong> zip and unzip it somewhere permanent, for example <code>C:\ffmpeg</code>.</li>
+                  <li>Back in iVault, next to <strong>FFmpeg folder</strong> press <strong>Choose…</strong> and pick the <code>bin</code> folder: the one containing <code>ffmpeg.exe</code> and <code>ffprobe.exe</code>.</li>
+                </ol>
+                <p>The status changes to <strong>Found</strong> and shows the path. If FFmpeg is already on your PATH, iVault finds it without a folder.</p>
+              </div>
+            </details>
+            <details id="ffmpeg-mac-linux">
+              <summary>Install FFmpeg on macOS or Linux<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>Open <strong>Settings → Conversion</strong> and press <strong>Install FFmpeg</strong>. iVault downloads a build (about 80 MB), checks it against a published checksum, and installs it for itself only. If the check fails, nothing is installed.</p>
+                <p>Prefer your own copy? Install FFmpeg with Homebrew or your package manager, or choose its folder under <strong>FFmpeg folder</strong>.</p>
+              </div>
+            </details>
+            <details id="ffmpeg-not-found">
+              <summary>It still says “Not found”<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <ul>
+                  <li>Both <code>ffmpeg</code> and <code>ffprobe</code> must be in the <em>same</em> folder. Choose the <code>bin</code> folder, not the folder above it.</li>
+                  <li>iVault looks in this order: the folder you chose, its own installed copy, then your PATH.</li>
+                  <li>If a conversion is already running, a new folder takes effect after you restart iVault.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="storage">
+          <h2>Storage setup</h2>
+          <p>Add storage on the <strong>Storage</strong> screen with <strong>Add storage</strong>. Every provider asks for a <strong>Name</strong>; then <strong>Save and test</strong> checks that iVault can write there before it saves. Passwords, keys and tokens go to your system keychain, never iVault's database.</p>
+          <div class="accordion">
+            <details id="s3">
+              <summary><span class="q"><i class="brand-logo lead" style="--logo:url(brands/cloudflare.svg)" aria-hidden="true"></i>Cloudflare R2, Amazon S3 or MinIO</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>Choose <strong>S3 / R2 / MinIO</strong>, then pick a <strong>Preset</strong> to fill in the endpoint and region. This is the recommended choice for public streaming.</p>
+                <div class="table-wrap"><table>
+                  <thead><tr><th scope="col">Field</th><th scope="col">What to enter</th></tr></thead>
+                  <tbody>
+                    <tr><td>Endpoint</td><td>R2: <code>https://&lt;account-id&gt;.r2.cloudflarestorage.com</code>. MinIO: your server, e.g. <code>http://127.0.0.1:9000</code>. Optional for AWS.</td></tr>
+                    <tr><td>Region</td><td><code>auto</code> for R2; your bucket's region for AWS.</td></tr>
+                    <tr><td>Bucket</td><td>The bucket name, e.g. <code>ivault-videos</code>.</td></tr>
+                    <tr><td>Public URL</td><td>The address that serves the bucket to viewers: a custom domain or the <code>r2.dev</code> URL.</td></tr>
+                    <tr><td>Path-style URLs</td><td>Tick for MinIO.</td></tr>
+                    <tr><td>Access key ID, Secret access key</td><td>An API key that can write to the bucket.</td></tr>
+                  </tbody>
+                </table></div>
+                <p>After uploading, iVault checks every file through the <strong>Public URL</strong>. If the bucket isn't publicly readable there, the job stops at <strong>Verifying</strong> with “files missing”.</p>
+              </div>
+            </details>
+            <details id="local">
+              <summary><span class="q"><svg class="icon lead" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><path d="M6 16h.01M10 16h.01"/></svg>Local folder or NAS</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>Choose <strong>Local / NAS</strong> and enter the <strong>Folder</strong> (on this computer or a mounted NAS share) and the <strong>Public URL</strong> of the web server that serves that folder, e.g. <code>http://nas.local/videos</code>.</p>
+                <p>It needs no account, which makes it the quickest way to try iVault.</p>
+              </div>
+            </details>
+            <details id="github">
+              <summary><span class="q"><i class="brand-logo lead" style="--logo:url(brands/github.svg)" aria-hidden="true"></i>GitHub</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>iVault pushes each video to its own branch and serves it through jsDelivr. It uses the <strong>git</strong> installed on your computer; install it from <a href="https://git-scm.com">git-scm.com</a> if iVault says it's missing.</p>
+                <ul>
+                  <li><strong>Owner</strong> and <strong>Repository</strong>: where the videos go.</li>
+                  <li><strong>Branch name</strong>: a template, <code>{file}</code> by default. It can use <code>{file}</code>, <code>{title}</code>, <code>{series}</code> and <code>{n:02}</code>, and must come out different for every video.</li>
+                  <li><strong>Authentication</strong>: <em>HTTPS token</em> needs a personal access token with the <code>repo</code> scope; <em>SSH key</em> uses your computer's SSH setup.</li>
+                </ul>
+                <p>jsDelivr won't serve a file over 20 MB, so iVault refuses larger files for GitHub.</p>
+              </div>
+            </details>
+            <details id="telegram">
+              <summary><span class="q"><i class="brand-logo lead" style="--logo:url(brands/telegram.svg)" aria-hidden="true"></i>Telegram</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <ol>
+                  <li>In Telegram, message <a href="https://t.me/BotFather">@BotFather</a>, send <code>/newbot</code> and copy the <strong>Bot token</strong> it replies with.</li>
+                  <li>Create a channel and add the bot to it as an <strong>administrator</strong>.</li>
+                  <li>Find the <strong>Channel ID</strong>: forward any post from the channel to @userinfobot, or open the channel on web.telegram.org and put <code>-100</code> in front of the number in the address. A private channel's ID looks like <code>-1001234567890</code>; a public one can use <code>@channelname</code>.</li>
+                </ol>
+                <p>Good to know:</p>
+                <ul>
+                  <li>Your website must play the videos with the <strong>same bot</strong>: a file can only be read by the bot that uploaded it.</li>
+                  <li>Telegram keeps <strong>one quality</strong> per video, so there's no quality switching. Tick the tallest size you want.</li>
+                  <li>Telegram allows about 20 files a minute and 20 MB per file, so large batches are slow. iVault stays under the limits and waits when Telegram asks it to.</li>
+                </ul>
+              </div>
+            </details>
+            <details id="google-drive">
+              <summary><span class="q"><i class="brand-logo lead" style="--logo:url(brands/googledrive.svg)" aria-hidden="true"></i>Google Drive</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <div class="alert" role="note">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                  <div class="alert-title">Storage, not a streaming service</div>
+                  <p class="alert-body">Google Drive throttles the hundreds of small requests a video makes. Use it for an archive or a small audience, not a public catalogue.</p>
+                </div>
+                <p>This is an advanced setup. You need:</p>
+                <ul>
+                  <li>An OAuth client in your own Google Cloud project: its <strong>Client ID</strong> and <strong>Client secret</strong>.</li>
+                  <li>The OAuth consent screen set to <strong>In Production</strong>. While it is in Testing, Google ends the connection after 7 days.</li>
+                  <li>An <strong>Edge base URL</strong>: your own deployment of the ivault-edge Worker, holding the same Google account's credentials. It streams the files to viewers.</li>
+                </ul>
+                <p>Enter a <strong>Drive folder</strong> name (it's created on the first upload), then press <strong>Connect Google account</strong>. Your browser opens; iVault only asks for the files it creates, not the rest of your Drive. If the browser doesn't come back, see <a href="#sign-in">sign-in problems</a>.</p>
+              </div>
+            </details>
+            <details id="onedrive">
+              <summary><span class="q"><svg class="icon lead" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>OneDrive</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>This is an advanced setup. You need:</p>
+                <ul>
+                  <li>An app registration in Microsoft Entra: its <strong>Application (client) ID</strong>. Register it as a public client with a loopback redirect; OneDrive uses no client secret.</li>
+                  <li>An <strong>Edge base URL</strong>: your own ivault-edge Worker, holding the same Microsoft account's credentials.</li>
+                </ul>
+                <p>Press <strong>Connect Microsoft account</strong>. iVault only asks for its own app folder. The connection needs renewing about every 90 days: reconnect in iVault and update the Worker's secret.</p>
+              </div>
+            </details>
+            <details id="webdav">
+              <summary><span class="q"><svg class="icon lead" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>WebDAV: Nextcloud, ownCloud or a NAS</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <ul>
+                  <li><strong>Base URL</strong>: the WebDAV address to upload to, e.g. <code>https://files.example.com/dav/ivault</code>. Don't put the password in it.</li>
+                  <li><strong>Public URL</strong>: the address that serves the same files to viewers, often the same host.</li>
+                  <li><strong>Username</strong> and <strong>Password</strong>.</li>
+                </ul>
+                <p><code>http://</code> is fine for a NAS on your own network but sends the password unencrypted; use <code>https://</code> anywhere else. SFTP isn't supported.</p>
+              </div>
+            </details>
+            <details id="storage-states">
+              <summary>What do “Not tested”, “Connected” and “Connection problem” mean?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <ul>
+                  <li><strong>Not tested</strong>: iVault hasn't checked this storage since it started. Press <strong>Test</strong> on its card.</li>
+                  <li><strong>Connected</strong>: the last test could write there.</li>
+                  <li><strong>Connection problem</strong>: the last test failed. Videos already uploaded keep playing. Press <strong>Fix connection</strong>, check the values, and test again. New uploads to it wait and retry rather than fail.</li>
+                </ul>
+                <p>To choose where new videos go by default, use <strong>Set as default</strong> in the card's <strong>⋯</strong> menu, or <strong>Settings → Storage</strong>.</p>
+              </div>
+            </details>
+            <details id="disconnect">
+              <summary>How do I remove a storage provider?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>On the <strong>Storage</strong> screen, open the card's <strong>⋯</strong> menu and choose <strong>Disconnect…</strong>. Its saved credentials are removed from your keychain too. Files already uploaded stay where they are.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="convert">
+          <h2>Converting and uploading</h2>
+          <div class="accordion">
+            <details id="statuses">
+              <summary>What do the job statuses mean?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <div class="table-wrap"><table>
+                  <thead><tr><th scope="col">Status</th><th scope="col">Meaning</th></tr></thead>
+                  <tbody>
+                    <tr><td>Queued</td><td>Waiting its turn. <strong>Settings → Conversion → Convert at once</strong> sets how many run together.</td></tr>
+                    <tr><td>Analysing</td><td>Reading the file's length, streams and resolution.</td></tr>
+                    <tr><td>Converting</td><td>FFmpeg is making the HLS versions.</td></tr>
+                    <tr><td>Uploading</td><td>Sending the files to your storage.</td></tr>
+                    <tr><td>Verifying</td><td>Checking every file is reachable at the public URL.</td></tr>
+                    <tr><td>Retrying</td><td>Something failed. iVault tries up to 5 times, waiting a little longer each time.</td></tr>
+                    <tr><td>Paused, Stopped</td><td>You paused or stopped it. A paused job keeps its progress.</td></tr>
+                    <tr><td>Failed</td><td>It gave up. Open the job to see why, then press <strong>Resume</strong> or <strong>Retry</strong>.</td></tr>
+                    <tr><td>Ready</td><td>Done. The stream URL is ready to copy.</td></tr>
+                  </tbody>
+                </table></div>
+              </div>
+            </details>
+            <details id="failed-halfway">
+              <summary>A job failed halfway. Do I start over?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>No. Open the job and read the card at the top. If it failed while uploading or verifying, it says <strong>Your converted files are safe</strong>: press <strong>Resume</strong> and only what's missing is uploaded. If it failed while reading or converting, fix the cause and press <strong>Retry</strong>. Your source file is never changed.</p>
+              </div>
+            </details>
+            <details id="no-link">
+              <summary>Why is there no link to copy yet?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>The link appears when the job is <strong>Ready</strong>, after it has been uploaded and verified. From then on it keeps working, even if you remove the video from iVault. Anyone with the link can play the video.</p>
+              </div>
+            </details>
+            <details id="qualities">
+              <summary>Why are some qualities greyed out?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>iVault doesn't upscale. A size taller than your source shows <strong>Source is …p</strong> and is skipped. Telegram also allows only one quality per video.</p>
+              </div>
+            </details>
+            <details id="subtitles-posters">
+              <summary>How do I add subtitles, a poster or a series?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <ul>
+                  <li><strong>Subtitles</strong>: in the file table press <strong>Choose file…</strong>, then <strong>Add another language…</strong> for more. For a finished video, choose <strong>Add subtitles…</strong> from its menu in the Library.</li>
+                  <li><strong>Poster</strong>: use the image button in the file table, or <strong>Upload thumbnail…</strong> later.</li>
+                  <li><strong>Series</strong>: open the Series picker and search. Tick <strong>Also use it for the other files in this batch</strong> to set them all at once. The series has to exist on the <strong>Catalog</strong> screen first.</li>
+                </ul>
+              </div>
+            </details>
+            <details id="speed">
+              <summary>How can I make conversion faster?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>In <strong>Settings → Conversion</strong>, set <strong>Encoding effort</strong> to <em>Fast</em>; it trades picture quality for speed, not file size. <strong>Convert at once</strong> runs several videos side by side, which helps on computers with many cores. Choosing fewer qualities saves time too.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="catalog">
+          <h2>Catalog and wuxia-web</h2>
+          <div class="accordion">
+            <details id="series">
+              <summary>How do I create a series?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>On the <strong>Catalog</strong> screen press <strong>New series</strong> and type the English title. <strong>Look up on TMDB</strong> suggests the poster, year, rating and description for you to accept or ignore, and <strong>Translate to Khmer</strong> drafts the Khmer title and description. Review them, then <strong>Save series</strong>.</p>
+                <p>The <strong>Slug</strong> names the series' file in wuxia-web. It's made from the title (lowercase letters, numbers and single dashes) and can't be changed once the series is created.</p>
+              </div>
+            </details>
+            <details id="api-keys">
+              <summary>Where do I get the TMDB and Gemini keys?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>Both go in <strong>Settings → Catalog</strong>, under <strong>wuxia-web</strong>, and are saved to your keychain.</p>
+                <ul>
+                  <li><strong>TMDB read access token</strong>: on themoviedb.org, open Settings → API and copy the long <em>API Read Access Token</em>, not the short v3 key.</li>
+                  <li><strong>Gemini API key</strong>: at aistudio.google.com, choose <em>Get API key</em>.</li>
+                </ul>
+                <p>When you press Translate, the series' English title, description and year are sent to Google. Nothing else leaves your computer.</p>
+              </div>
+            </details>
+            <details id="export">
+              <summary>How do I export to wuxia-web?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <ol>
+                  <li>Set your <strong>wuxia-web db folder</strong> in <strong>Settings → Catalog</strong>.</li>
+                  <li>Open the series and press <strong>Export to wuxia-web</strong>.</li>
+                </ol>
+                <p>iVault writes <code>&lt;slug&gt;.json</code> and updates <code>index.json</code> in that folder on your computer. Episodes from other sources are kept. It doesn't commit or upload anything: review the change with <code>git diff</code>, then commit and deploy as usual. To bring existing series in, use <strong>Import from wuxia-web</strong>.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="errors">
+          <h2>Error messages</h2>
+          <p>What iVault's messages mean, and what to do about them.</p>
+          <div class="accordion">
+            <details id="err-storage">
+              <summary>Storage: “Authentication failed”, “Access denied”, “Could not reach…”<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <div class="table-wrap"><table>
+                  <thead><tr><th scope="col">Message</th><th scope="col">What to do</th></tr></thead>
+                  <tbody>
+                    <tr><td>Authentication failed — check the access key, bot token or credentials</td><td>The key or token is wrong or was revoked. Edit the storage and paste it again.</td></tr>
+                    <tr><td>Access denied — the key can't write to bucket …</td><td>The key works but lacks permission. Give it write access to that bucket.</td></tr>
+                    <tr><td>Access denied — the bot has to be an administrator of …</td><td>Make the Telegram bot an administrator of the channel.</td></tr>
+                    <tr><td>Access denied — those credentials can't reach owner/repo</td><td>The GitHub token needs the <code>repo</code> scope and access to that repository.</td></tr>
+                    <tr><td>Could not reach the endpoint, Telegram or GitHub</td><td>Check your internet connection and the endpoint address, then press <strong>Test</strong>.</td></tr>
+                    <tr><td>Storage is full on this provider.</td><td>Free up space or raise the quota, then <strong>Resume</strong>.</td></tr>
+                    <tr><td>… asked iVault to slow down — try again in N s.</td><td>A rate limit. iVault waits and retries by itself.</td></tr>
+                  </tbody>
+                </table></div>
+              </div>
+            </details>
+            <details id="err-files">
+              <summary>“files missing on …”, “provider limit is …”, “which … already uses”<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <ul>
+                  <li><strong>N files missing on … — Retry re-uploads them</strong>: the upload finished, but some files can't be fetched from the Public URL. Check that the URL really serves the bucket or folder, then press <strong>Retry</strong>.</li>
+                  <li><strong>… is N bytes; provider limit is …</strong>: GitHub and Telegram accept files up to 20 MB. Choose a lower quality or other storage.</li>
+                  <li><strong>This would publish to …, which “…” already uses</strong>: two GitHub videos would share a branch. Change the branch template or rename one of them.</li>
+                </ul>
+              </div>
+            </details>
+            <details id="err-convert">
+              <summary>“Couldn't read the video”, “Conversion failed”, “file has no video stream”<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>FFmpeg couldn't read or convert the file. Check that it plays in a video player. A damaged file, or one with sound only (<strong>file has no video stream</strong>), can't be converted. Open the job's <strong>Logs</strong> tab and press <strong>Copy logs</strong> to include the details when you ask for help.</p>
+              </div>
+            </details>
+            <details id="sign-in">
+              <summary>Google or Microsoft sign-in doesn't finish<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <ul>
+                  <li><strong>iVault stopped waiting for that sign-in</strong>: iVault waits 5 minutes for the browser. Press Connect again and finish in the browser.</li>
+                  <li><strong>The sign-in was cancelled</strong>: the page was closed or declined. Nothing was connected.</li>
+                  <li><strong>Google refused this sign-in</strong>: check the client ID and client secret.</li>
+                  <li><strong>Microsoft refused this sign-in</strong>: check the client ID, and that the app registration allows a loopback redirect.</li>
+                  <li><strong>It worked until a few days ago</strong>: your Google consent screen is probably still in Testing (7-day limit), or the Microsoft connection is due its 90-day renewal. Reconnect.</li>
+                </ul>
+                <p>When it works, the browser tab says <strong>Connected</strong> and you can close it.</p>
+              </div>
+            </details>
+            <details id="err-catalog">
+              <summary>“TMDB rejected the token”, “Gemini rejected the API key”<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>Paste the key again in <strong>Settings → Catalog</strong>; see <a href="#api-keys">where to get the keys</a>. For TMDB, make sure it's the long read access token. <strong>… is rate-limiting requests</strong> means wait a minute and try again. If TMDB finds nothing, try the original-language title or add the year.</p>
+              </div>
+            </details>
+            <details id="err-app">
+              <summary>“Lost the connection to the job engine”, “the job queue has stopped”<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>Quit and reopen iVault. Interrupted jobs resume on their own, and uploads carry on where they stopped.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="settings">
+          <h2>Settings, data and shortcuts</h2>
+          <div class="accordion">
+            <details id="data">
+              <summary>Where does iVault keep my data?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>Open <strong>Settings → Advanced → Folders</strong> and press <strong>Reveal</strong> next to Cache, Data or FFmpeg. Data holds your library and settings; Cache holds conversions in progress. Credentials are in your system keychain. Nothing is sent to us: see the <a href="../privacy/">privacy policy</a>.</p>
+              </div>
+            </details>
+            <details id="reset">
+              <summary>Clear the cache or reset settings<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>Both are in <strong>Settings → Advanced → Maintenance</strong>.</p>
+                <ul>
+                  <li><strong>Clear cache</strong> frees disk space. Ready videos keep playing; failed and stopped jobs will convert again from scratch.</li>
+                  <li><strong>Reset settings</strong> returns the theme, quit behaviour, parallel conversions and the FFmpeg and wuxia-web folders to their defaults. Your videos, storage and credentials are not touched.</li>
+                </ul>
+              </div>
+            </details>
+            <details id="version">
+              <summary>Which version do I have?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel"><p><strong>Settings → About</strong> shows the version. Include it when you report a problem.</p></div>
+            </details>
+            <details id="shortcuts">
+              <summary>Keyboard shortcuts<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="panel">
+                <p>Use <kbd>Ctrl</kbd> on Windows and Linux, <kbd>⌘</kbd> on macOS.</p>
+                <div class="table-wrap"><table>
+                  <thead><tr><th scope="col">Keys</th><th scope="col">Action</th></tr></thead>
+                  <tbody>
+                    <tr><td><kbd>Ctrl</kbd> <kbd>N</kbd></td><td>New Video</td></tr>
+                    <tr><td><kbd>Ctrl</kbd> <kbd>O</kbd></td><td>Browse for files, on the Source step</td></tr>
+                    <tr><td><kbd>Ctrl</kbd> <kbd>,</kbd></td><td>Settings</td></tr>
+                    <tr><td><kbd>Ctrl</kbd> <kbd>F</kbd></td><td>Search the Library</td></tr>
+                    <tr><td><kbd>Enter</kbd>, <kbd>Space</kbd></td><td>Open or preview the selected video</td></tr>
+                    <tr><td><kbd>Ctrl</kbd> <kbd>C</kbd></td><td>Copy the selected video's stream URL</td></tr>
+                    <tr><td><kbd>Delete</kbd></td><td>Remove the selected video</td></tr>
+                    <tr><td><kbd>Esc</kbd></td><td>Clear the search</td></tr>
+                  </tbody>
+                </table></div>
+                <p>Right-click a video in the Library for all of its actions.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2>Still stuck?</h2>
+          <div class="card contact">
+            <div>
+              <h3>Report a problem or ask a question</h3>
+              <p>Include your iVault version (Settings → About), your operating system, your storage provider, the exact message, and the job's copied logs if it failed. Remove access keys, tokens and passwords first.</p>
+            </div>
+            <a class="btn btn-default" href="https://github.com/iVaultkh/ivault-web/issues/new">
+              <i class="brand-logo" style="--logo:url(brands/github.svg)" aria-hidden="true"></i>
+              Open an issue
+            </a>
+          </div>
+        </section>
+      </article>
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <span>© 2026 iVaultkh · MIT License</span>
-      <nav aria-label="Footer"><a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .71-1.53l7-6a2 2 0 0 1 2.58 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a><a href="../support/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24m5.66 0 4.24-4.24m-4.24 9.9 4.24 4.24m-9.9 0-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>Support</a><a href="../privacy/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Privacy</a><a href="https://github.com/iVaultkh/ivault-web"><i class="brand-logo" style="--logo:url(brands/github.svg)" aria-hidden="true"></i>GitHub</a></nav>
+      <nav aria-label="Footer"><a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .71-1.53l7-6a2 2 0 0 1 2.58 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a><a href="./"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24m5.66 0 4.24-4.24m-4.24 9.9 4.24 4.24m-9.9 0-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>Support</a><a href="../privacy/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Privacy</a><a href="https://github.com/iVaultkh/ivault-web"><i class="brand-logo" style="--logo:url(brands/github.svg)" aria-hidden="true"></i>GitHub</a></nav>
     </div>
   </footer>
 </body>
