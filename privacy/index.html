@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iVault Privacy Policy</title>
+  <meta name="description" content="How the iVault desktop app handles your data: stored on your device, sent only to services you configure, no telemetry.">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="../"><img src="../assets/logo.svg" alt="" width="32" height="32">iVault</a>
+    <nav aria-label="Site">
+      <a href="../support/">Support</a>
+      <a href="./" aria-current="page">Privacy</a>
+    </nav>
+  </header>
+
+  <main class="wrap doc">
+    <h1>Privacy policy</h1>
+    <p class="meta">Applies to the iVault desktop app for Windows, macOS and Linux, including the Microsoft Store version. Last updated 26 September 2026.</p>
+
+    <p class="note"><strong>In short:</strong> iVault has no account, no server and no analytics. Your videos, settings and credentials stay on your computer. The app sends data only to the storage and metadata services <em>you</em> connect, and only to do what you asked.</p>
+
+    <h2>Who we are</h2>
+    <p>iVault is published by iVaultkh (ichamrong) under the MIT License. Questions about this policy go to the contact channel on the <a href="../support/">support page</a>.</p>
+
+    <h2>What we collect</h2>
+    <p>Nothing. We do not run a service that receives data from the app. iVault contains no telemetry, crash reporting, advertising or tracking code, and it does not create a user account with us.</p>
+
+    <h2>What stays on your device</h2>
+    <ul>
+      <li><strong>Your library and jobs</strong>: file paths, series and episode details, upload progress and the links iVault produced, in a local database in the app's data folder.</li>
+      <li><strong>Encoded video</strong>: temporary HLS files while a job runs.</li>
+      <li><strong>Credentials</strong>: storage access keys, bot tokens, OAuth refresh tokens and API keys are stored in your operating system's secure credential store (Windows Credential Manager, macOS Keychain or the Linux Secret Service), never in plain files.</li>
+    </ul>
+    <p>Uninstalling the app and deleting its data folder removes all of this. Credentials can also be removed from inside the app by disconnecting a provider.</p>
+
+    <h2>What leaves your device, and where it goes</h2>
+    <p>iVault only makes network requests needed for features you turn on. Each service below receives data under its own privacy policy, using an account that belongs to you.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Service</th><th>When</th><th>What is sent</th></tr></thead>
+        <tbody>
+          <tr><td>Your storage provider: Cloudflare R2, Amazon S3, MinIO, WebDAV, GitHub (and jsDelivr for public GitHub links), Google Drive, OneDrive or Telegram</td><td>When you connect it and when you upload</td><td>Your encoded video segments, playlists and file lists, with the credentials you entered for that provider.</td></tr>
+          <tr><td>Google or Microsoft sign-in</td><td>When you connect Google Drive or OneDrive</td><td>A standard OAuth sign-in in your browser. The reply comes back to the app on your own computer (127.0.0.1); iVault keeps only the resulting token, in the keychain.</td></tr>
+          <tr><td>The Movie Database (TMDB)</td><td>When you search for a series, with your own TMDB key</td><td>Your search text. Posters and details come back.</td></tr>
+          <tr><td>Google Gemini</td><td>When you ask for a Khmer title and description, with your own Gemini key</td><td>The English title and overview of that series. The generated text is a suggestion you review before saving.</td></tr>
+          <tr><td>Your website (for example WordPress or a catalog repository)</td><td>When you publish</td><td>The series details and the stream link you chose to publish.</td></tr>
+          <tr><td>FFmpeg download sites (evermeet.cx on macOS, johnvansickle.com on Linux)</td><td>Only if you ask iVault to download FFmpeg. On Windows you download it yourself</td><td>An ordinary file download request.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>We do not sell, rent or share your data, because we never receive it.</p>
+
+    <h2>Your content</h2>
+    <p>You are responsible for the videos you upload and for having the right to store and share them. Links iVault creates are as public as the storage you point them at: a public bucket or public repository makes the video reachable by anyone with the link.</p>
+
+    <h2>Children</h2>
+    <p>iVault is a tool for publishing video and is not directed at children under 13. It collects no personal information from anyone.</p>
+
+    <h2>Security</h2>
+    <p>Credentials are kept in the OS credential store and are removed from error messages and logs before they are shown. Connections to services use HTTPS where the service offers it.</p>
+
+    <h2>Changes</h2>
+    <p>If the app starts handling data differently, this page will be updated first and the date above will change.</p>
+
+    <h2>Contact</h2>
+    <p>Open an issue on the <a href="../support/">support page</a> and mark it “privacy”.</p>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 iVaultkh · MIT License</span>
+      <span><a href="../">Home</a> · <a href="../support/">Support</a></span>
+    </div>
+  </footer>
+</body>
+</html>

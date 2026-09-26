@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iVault Support</title>
+  <meta name="description" content="Get help with iVault: report a problem, ask a question, and answers to common setup questions.">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="../"><img src="../assets/logo.svg" alt="" width="32" height="32">iVault</a>
+    <nav aria-label="Site">
+      <a href="./" aria-current="page">Support</a>
+      <a href="../privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <main class="wrap doc">
+    <h1>Support</h1>
+    <p class="meta">We read every report. Replies usually come within two working days.</p>
+
+    <p><a class="cta" href="https://github.com/iVaultkh/ivault-web/issues/new">Report a problem or ask a question</a></p>
+    <p>Include your iVault version (Settings → About), your operating system, which storage provider you use, and what you expected to happen. Please remove access keys, tokens and passwords from anything you paste.</p>
+
+    <h2>Common questions</h2>
+
+    <h3>iVault says FFmpeg is missing</h3>
+    <p>iVault encodes video with FFmpeg on your computer. On macOS and Linux, Settings → FFmpeg can download a verified build for you. On Windows, download the “release essentials” zip from <a href="https://www.gyan.dev/ffmpeg/builds/">gyan.dev</a>, unzip it, and in Settings → FFmpeg choose its <code>bin</code> folder (the one containing <code>ffmpeg.exe</code> and <code>ffprobe.exe</code>).</p>
+
+    <h3>How do I connect Telegram?</h3>
+    <p>Create a bot with <a href="https://t.me/BotFather">@BotFather</a> and copy its token. Make the bot an administrator of a private channel. Post any message in the channel, forward it to a bot such as @userinfobot or open the channel in Telegram Web: the channel ID is the number starting with <code>-100</code>. Paste both into Storage → Telegram.</p>
+
+    <h3>Uploads to Telegram are slow</h3>
+    <p>Telegram limits bots to roughly 20 messages a minute and about 20 MB per downloadable file. iVault stays under those limits on purpose, so a long episode takes a while. The job resumes where it stopped if you close the app.</p>
+
+    <h3>A job failed halfway</h3>
+    <p>Every stage is checkpointed. Press Retry on the job: iVault skips encoding and segments that already uploaded.</p>
+
+    <h3>Where is my data?</h3>
+    <p>On your computer, and in the storage you connected. See the <a href="../privacy/">privacy policy</a> for details.</p>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 iVaultkh · MIT License</span>
+      <span><a href="../">Home</a> · <a href="../privacy/">Privacy policy</a></span>
+    </div>
+  </footer>
+</body>
+</html>
