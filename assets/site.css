@@ -552,3 +552,25 @@ kbd {
 .copy-link:hover { color: var(--foreground); }
 .copy-link .icon { width: 14px; height: 14px; }
 .contact h3 { margin: 0 0 4px; font-size: 18px; }
+
+/* ---------- download ---------- */
+.dl-grid { display: grid; gap: 16px; margin: 8px 0 24px; }
+@media (min-width: 768px) { .dl-grid { grid-template-columns: 1fr 1fr; } }
+.dl-card { display: flex; flex-direction: column; gap: 12px; position: relative; }
+.dl-card h2 { margin: 0; padding: 0; border: 0; font-size: 20px; }
+.dl-card p { margin: 0; }
+.dl-card .actions { margin-top: auto; }
+.dl-card .btn { align-self: flex-start; }
+.dl-recommended { border-color: color-mix(in oklch, var(--primary) 45%, var(--border)); }
+.dl-tag { position: absolute; top: 20px; right: 20px; color: var(--primary); }
+.dl-note { color: var(--muted-foreground) !important; font-size: 14px; }
+.dl-size { opacity: 0.7; font-weight: 400; }
+.btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+
+/* ---------- changelog ---------- */
+.release { padding-top: 8px; }
+.release-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; margin: 48px 0 8px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.release-head h2 { margin: 0; padding: 0; border: 0; }
+.release-head time { color: var(--muted-foreground); font-size: 15px; }
+.release h3 { display: flex; align-items: center; gap: 8px; }
+.release h3 .icon { color: var(--primary); }

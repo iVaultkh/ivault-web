@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download iVault for Windows</title>
+  <meta name="description" content="Download iVault for Windows 10 and 11, from the Microsoft Store or as a direct installer for x64 and Arm64.">
+  <script src="../assets/theme.js"></script>
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#0b0d14">
+  <link rel="canonical" href="https://ivaultkh.github.io/ivault-web/download/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="iVault">
+  <meta property="og:title" content="Download iVault for Windows">
+  <meta property="og:description" content="Get iVault from the Microsoft Store, or download the installer for x64 or Arm64.">
+  <meta property="og:url" content="https://ivaultkh.github.io/ivault-web/download/">
+  <meta property="og:image" content="https://ivaultkh.github.io/ivault-web/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../assets/fonts.css">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="../"><img src="../assets/logo.svg" alt="" width="24" height="24">iVault</a>
+      <nav class="nav" aria-label="Site">
+        <a class="wide" href="../#how">How it works</a>
+        <a href="./" aria-current="page">Download</a>
+        <a class="wide" href="../changelog/">Changelog</a>
+        <a href="../support/">Support</a>
+        <a class="wide" href="../privacy/">Privacy</a>
+      </nav>
+      <button class="btn btn-ghost btn-icon theme-toggle" type="button" aria-label="Toggle light and dark theme">
+        <svg class="icon moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="icon sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-17.07 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container docs">
+    <article class="prose">
+      <h1>Download iVault</h1>
+      <p class="meta">For Windows 10 (version 1809) and Windows 11 · <span id="dl-version">Version 1.0.0</span> · <a href="../changelog/">What's new</a></p>
+
+      <!--
+        The Store button goes live when data-store-live="true". Until
+        Microsoft's review passes, the listing URL shows "not found", so the
+        button stays disabled and says why.
+      -->
+      <section class="dl-grid" aria-label="Ways to get iVault">
+        <div class="card dl-card dl-recommended" id="store" data-store-live="false">
+          <span class="badge dl-tag">Recommended</span>
+          <h2>Microsoft Store</h2>
+          <p>Signed by Microsoft, installs in one click and updates itself. No security warnings.</p>
+          <a class="btn btn-default dl-store" href="https://apps.microsoft.com/detail/9PMVF5298D1D">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.5 4.5v7H3ZM11.5 4.4 21 3v8.5h-9.5ZM3 12.5h7.5v7L3 18.5ZM11.5 12.5H21V21l-9.5-1.4Z"/></svg>
+            Get it from Microsoft Store
+          </a>
+          <p class="dl-note" id="store-note">In Microsoft's review now. This button works as soon as the listing is live.</p>
+        </div>
+
+        <div class="card dl-card">
+          <h2>Direct download</h2>
+          <p>The installer, from our public GitHub releases. Most PCs are <b>x64</b>; choose <b>Arm64</b> for Surface Pro X, Copilot+ and other Snapdragon PCs.</p>
+          <div class="actions">
+            <a class="btn btn-outline" id="dl-x64" href="https://github.com/iVaultkh/ivault-web/releases/latest">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+              Windows x64
+            </a>
+            <a class="btn btn-outline" id="dl-arm64" href="https://github.com/iVaultkh/ivault-web/releases/latest">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+              Windows Arm64
+            </a>
+          </div>
+          <p class="dl-note" id="dl-status">Links go to the latest release on GitHub.</p>
+        </div>
+      </section>
+
+      <div class="alert" role="note">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        <span class="alert-title">"Windows protected your PC" on the direct installer</span>
+        <p class="alert-body">The direct installer is not code-signed yet, so Windows SmartScreen warns before the first run. Click <b>More info</b>, then <b>Run anyway</b>. To check the file is ours, compare its SHA-256 with the <code>SHA256SUMS</code> file on the release. The Microsoft Store version has no warning.</p>
+      </div>
+
+      <h2 id="before">Before you start</h2>
+      <ul>
+        <li><b>FFmpeg.</b> iVault converts with FFmpeg, which is free. On Windows, download the "release essentials" build from <a href="https://www.gyan.dev/ffmpeg/builds/">gyan.dev</a>, unzip it, and choose its <code>bin</code> folder in <b>Settings → Conversion</b>. The <a href="../support/">support guide</a> walks through it.</li>
+        <li><b>Somewhere to upload.</b> A storage account (Cloudflare R2, Amazon S3, MinIO, Telegram, Google Drive, OneDrive, GitHub, WebDAV) or just a folder on your computer or NAS.</li>
+        <li><b>Windows 10 version 1809 or later</b>, on x64 or Arm64. WebView2 comes with Windows 11; the installer adds it on Windows 10 if it is missing.</li>
+      </ul>
+
+      <h2 id="other">macOS and Linux</h2>
+      <p>iVault runs on macOS and Linux, but there are no ready-made downloads for them yet. They will appear on this page and in the <a href="../changelog/">changelog</a> when they are.</p>
+
+      <h2 id="all">Older versions and checksums</h2>
+      <p>Every release, with its installers and <code>SHA256SUMS</code> files, is on <a href="https://github.com/iVaultkh/ivault-web/releases">GitHub Releases</a>.</p>
+    </article>
+
+    <aside class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <ul>
+        <li><a href="#store">Get iVault</a></li>
+        <li><a href="#before">Before you start</a></li>
+        <li><a href="#other">macOS and Linux</a></li>
+        <li><a href="#all">Older versions</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 iVaultkh · MIT License</span>
+      <nav aria-label="Footer"><a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .71-1.53l7-6a2 2 0 0 1 2.58 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a><a href="./"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>Download</a><a href="../changelog/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h.01M3 18h.01M3 6h.01M8 12h13M8 18h13M8 6h13"/></svg>Changelog</a><a href="../support/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24m5.66 0 4.24-4.24m-4.24 9.9 4.24 4.24m-9.9 0-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>Support</a><a href="../privacy/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Privacy</a><a href="https://github.com/iVaultkh/ivault-web"><i class="brand-logo" style="--logo:url(brands/github.svg)" aria-hidden="true"></i>GitHub</a></nav>
+    </div>
+  </footer>
+  <script src="../assets/download.js"></script>
+</body>
+</html>
