@@ -5,47 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>iVault Support</title>
   <meta name="description" content="Get help with iVault: report a problem, ask a question, and answers to common setup questions.">
+  <script src="../assets/theme.js"></script>
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+Khmer:wght@400;500&display=swap">
   <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
-  <header class="wrap top">
-    <a class="brand" href="../"><img src="../assets/logo.svg" alt="" width="32" height="32">iVault</a>
-    <nav aria-label="Site">
-      <a href="./" aria-current="page">Support</a>
-      <a href="../privacy/">Privacy</a>
-    </nav>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="../"><img src="../assets/logo.svg" alt="" width="24" height="24">iVault</a>
+      <nav class="nav" aria-label="Site">
+        <a class="wide" href="../#how">How it works</a>
+        <a href="./" aria-current="page">Support</a>
+        <a href="../privacy/">Privacy</a>
+      </nav>
+      <button class="btn btn-ghost btn-icon theme-toggle" type="button" aria-label="Toggle light and dark theme">
+        <svg class="icon moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="icon sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-17.07 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
   </header>
 
-  <main class="wrap doc">
-    <h1>Support</h1>
-    <p class="meta">We read every report. Replies usually come within two working days.</p>
+  <main class="container docs">
+    <article class="prose">
+      <h1>Support</h1>
+      <p class="meta">Most answers are below. If yours isn't, open an issue and we'll pick it up there.</p>
 
-    <p><a class="cta" href="https://github.com/iVaultkh/ivault-web/issues/new">Report a problem or ask a question</a></p>
-    <p>Include your iVault version (Settings → About), your operating system, which storage provider you use, and what you expected to happen. Please remove access keys, tokens and passwords from anything you paste.</p>
+      <div class="card contact">
+        <div>
+          <h2>Report a problem or ask a question</h2>
+          <p>Include your iVault version (Settings → About), your operating system, your storage provider and what you expected to happen. Remove access keys, tokens and passwords from anything you paste.</p>
+        </div>
+        <a class="btn btn-default" href="https://github.com/iVaultkh/ivault-web/issues/new">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          Open an issue
+        </a>
+      </div>
 
-    <h2>Common questions</h2>
+      <h2 id="faq">Common questions</h2>
+      <div class="accordion">
+        <details open>
+          <summary>iVault says FFmpeg is missing<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="panel">
+            <p>iVault encodes video with FFmpeg on your computer.</p>
+            <ol>
+              <li><strong>macOS and Linux:</strong> Settings → FFmpeg can download a verified build for you.</li>
+              <li><strong>Windows:</strong> download the “release essentials” zip from <a href="https://www.gyan.dev/ffmpeg/builds/">gyan.dev</a>, unzip it, and in Settings → FFmpeg choose its <code>bin</code> folder (the one containing <code>ffmpeg.exe</code> and <code>ffprobe.exe</code>).</li>
+            </ol>
+          </div>
+        </details>
+        <details>
+          <summary>How do I connect Telegram?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="panel">
+            <ol>
+              <li>Create a bot with <a href="https://t.me/BotFather">@BotFather</a> and copy its token.</li>
+              <li>Make the bot an administrator of a private channel.</li>
+              <li>Find the channel ID: post any message in the channel and forward it to a bot such as @userinfobot, or open the channel in Telegram Web. The ID is the number starting with <code>-100</code>.</li>
+              <li>Paste the token and the ID into Storage → Telegram.</li>
+            </ol>
+          </div>
+        </details>
+        <details>
+          <summary>Uploads to Telegram are slow<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="panel"><p>Telegram limits bots to roughly 20 messages a minute and about 20 MB per downloadable file. iVault stays under those limits on purpose, so a long episode takes a while. The job resumes where it stopped if you close the app.</p></div>
+        </details>
+        <details>
+          <summary>A job failed halfway<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="panel"><p>Every stage is checkpointed. Press Retry on the job: iVault skips encoding and segments that already uploaded.</p></div>
+        </details>
+        <details>
+          <summary>Where is my data?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="panel"><p>On your computer, and in the storage you connected. See the <a href="../privacy/">privacy policy</a> for details.</p></div>
+        </details>
+      </div>
+    </article>
 
-    <h3>iVault says FFmpeg is missing</h3>
-    <p>iVault encodes video with FFmpeg on your computer. On macOS and Linux, Settings → FFmpeg can download a verified build for you. On Windows, download the “release essentials” zip from <a href="https://www.gyan.dev/ffmpeg/builds/">gyan.dev</a>, unzip it, and in Settings → FFmpeg choose its <code>bin</code> folder (the one containing <code>ffmpeg.exe</code> and <code>ffprobe.exe</code>).</p>
-
-    <h3>How do I connect Telegram?</h3>
-    <p>Create a bot with <a href="https://t.me/BotFather">@BotFather</a> and copy its token. Make the bot an administrator of a private channel. Post any message in the channel, forward it to a bot such as @userinfobot or open the channel in Telegram Web: the channel ID is the number starting with <code>-100</code>. Paste both into Storage → Telegram.</p>
-
-    <h3>Uploads to Telegram are slow</h3>
-    <p>Telegram limits bots to roughly 20 messages a minute and about 20 MB per downloadable file. iVault stays under those limits on purpose, so a long episode takes a while. The job resumes where it stopped if you close the app.</p>
-
-    <h3>A job failed halfway</h3>
-    <p>Every stage is checkpointed. Press Retry on the job: iVault skips encoding and segments that already uploaded.</p>
-
-    <h3>Where is my data?</h3>
-    <p>On your computer, and in the storage you connected. See the <a href="../privacy/">privacy policy</a> for details.</p>
+    <nav class="toc" aria-label="Related">
+      <p>Related</p>
+      <ul>
+        <li><a href="#faq">Common questions</a></li>
+        <li><a href="../privacy/">Privacy policy</a></li>
+        <li><a href="../#how">How iVault works</a></li>
+      </ul>
+    </nav>
   </main>
 
-  <footer>
-    <div class="wrap">
+  <footer class="site-footer">
+    <div class="container">
       <span>© 2026 iVaultkh · MIT License</span>
-      <span><a href="../">Home</a> · <a href="../privacy/">Privacy policy</a></span>
+      <nav aria-label="Footer"><a href="../">Home</a><a href="../privacy/">Privacy</a></nav>
     </div>
   </footer>
 </body>

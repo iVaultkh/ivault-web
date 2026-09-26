@@ -3,47 +3,187 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>iVault — Convert once. Store anywhere. Stream everywhere.</title>
+  <title>iVault: video to a streaming link, on your own storage</title>
   <meta name="description" content="iVault turns a local video file into a stable HLS streaming link on storage you own: R2, S3, MinIO, Telegram, Google Drive, GitHub, OneDrive, WebDAV or a local folder.">
+  <script src="assets/theme.js"></script>
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+Khmer:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <header class="wrap top">
-    <a class="brand" href="./"><img src="assets/logo.svg" alt="" width="32" height="32">iVault</a>
-    <nav aria-label="Site">
-      <a href="support/">Support</a>
-      <a href="privacy/">Privacy</a>
-    </nav>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="./"><img src="assets/logo.svg" alt="" width="24" height="24">iVault</a>
+      <nav class="nav" aria-label="Site">
+        <a class="wide" href="#how">How it works</a>
+        <a href="support/">Support</a>
+        <a href="privacy/">Privacy</a>
+      </nav>
+      <button class="btn btn-ghost btn-icon theme-toggle" type="button" aria-label="Toggle light and dark theme">
+        <svg class="icon moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="icon sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-17.07 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
   </header>
 
-  <main class="wrap">
+  <main>
     <section class="hero">
-      <h1>Convert once. Store anywhere. Stream everywhere.</h1>
-      <p>iVault is a desktop app that turns a video file on your computer into a playable streaming link (HLS) on storage you already own, then hands you the URL.</p>
-      <a class="cta" href="support/">Get help</a><a class="cta ghost" href="privacy/">How your data is handled</a>
+      <div class="container">
+        <div>
+          <h1>Convert once. Store anywhere. <span>Stream everywhere.</span></h1>
+          <p class="lede">iVault is a desktop app that turns a video file on your computer into a playable streaming link (HLS) on storage you already own, then hands you the URL.</p>
+          <div class="actions">
+            <a class="btn btn-default" href="#how">
+              See how it works
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            </a>
+            <a class="btn btn-outline" href="support/">Get support</a>
+          </div>
+        </div>
+
+        <figure class="window" style="margin:0" aria-label="The iVault queue, with four episodes in different stages">
+          <div class="window-bar">
+            <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="window-title">Queue</span>
+            <span class="badge is-running"><span class="dot"></span>2 running</span>
+          </div>
+          <ul class="queue">
+            <li class="job">
+              <span class="poster" aria-hidden="true">EP3</span>
+              <div class="job-title">The Lucky Stars<span class="km">ភាគទី ៣</span></div>
+              <div class="job-side">
+                <span class="badge">Cloudflare R2</span>
+                <span class="tabular" style="color:var(--muted-foreground);font-size:12px">4 min left</span>
+              </div>
+              <div class="job-meta">
+                <svg class="icon spin is-running" viewBox="0 0 24 24" aria-hidden="true" style="width:14px;height:14px"><path d="M21 12a9 9 0 1 1-6.22-8.56"/></svg>
+                <span>Uploading 720p</span>
+                <span class="progress live" style="--v:56%"><i></i></span>
+                <span class="tabular count">1,284 / 2,310</span>
+              </div>
+            </li>
+            <li class="job">
+              <span class="poster p2" aria-hidden="true">EP2</span>
+              <div class="job-title">The Lucky Stars<span class="km">ភាគទី ២</span></div>
+              <div class="job-side">
+                <span class="btn btn-outline btn-sm" aria-hidden="true">
+                  <svg class="icon" viewBox="0 0 24 24" style="width:14px;height:14px"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                  Copy URL
+                </span>
+              </div>
+              <div class="job-meta">
+                <svg class="icon is-ready" viewBox="0 0 24 24" aria-hidden="true" style="width:14px;height:14px"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span class="url">media/lucky-stars/ep02/master.m3u8</span>
+              </div>
+            </li>
+            <li class="job">
+              <span class="poster p3" aria-hidden="true">EP4</span>
+              <div class="job-title">The Lucky Stars<span class="km">ភាគទី ៤</span></div>
+              <div class="job-side">
+                <span class="badge">Google Drive</span>
+                <span class="tabular" style="color:var(--muted-foreground);font-size:12px">31%</span>
+              </div>
+              <div class="job-meta">
+                <svg class="icon spin is-running" viewBox="0 0 24 24" aria-hidden="true" style="width:14px;height:14px"><path d="M21 12a9 9 0 1 1-6.22-8.56"/></svg>
+                <span>Encoding 1080p</span>
+                <span class="progress" style="--v:31%"><i></i></span>
+              </div>
+            </li>
+            <li class="job">
+              <span class="poster" aria-hidden="true">EP5</span>
+              <div class="job-title">The Lucky Stars<span class="km">ភាគទី ៥</span></div>
+              <div class="job-side">
+                <span class="badge">Telegram</span>
+              </div>
+              <div class="job-meta">
+                <svg class="icon is-warn" viewBox="0 0 24 24" aria-hidden="true" style="width:14px;height:14px"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <span class="grow">Waiting for Telegram's rate limit · resumes in <span class="tabular">38 s</span></span>
+              </div>
+            </li>
+          </ul>
+        </figure>
+      </div>
     </section>
 
-    <section class="steps" aria-label="How it works">
-      <div class="step"><b>1 · Drop</b><h2>Add your episodes</h2><p>Drag in one file or a batch. Set the series and episode number.</p></div>
-      <div class="step"><b>2 · Encode</b><h2>HLS in four sizes</h2><p>FFmpeg on your machine makes 360p to 1080p renditions. Nothing is uploaded to us.</p></div>
-      <div class="step"><b>3 · Upload</b><h2>To your storage</h2><p>Segments go straight to the provider you connected, with resumable, checkpointed jobs.</p></div>
-      <div class="step"><b>4 · Copy URL</b><h2>One stable link</h2><p>Paste the <code>master.m3u8</code> link into your site or player.</p></div>
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head">
+          <h2>From file to link in five stages</h2>
+          <p>These are the stages iVault shows on every job. Each one is checkpointed, so a failed job resumes where it stopped instead of starting again.</p>
+        </div>
+        <ol class="pipeline">
+          <li>
+            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Probe</div>
+            <p>Reads the file's length, streams and resolution with ffprobe.</p>
+          </li>
+          <li>
+            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>Encode</div>
+            <p>FFmpeg on your machine makes HLS at 360p, 480p, 720p and 1080p.</p>
+          </li>
+          <li>
+            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>Upload</div>
+            <p>Segments go straight to the storage you connected, within its limits.</p>
+          </li>
+          <li>
+            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>Publish</div>
+            <p>Adds the series and episode to the catalog your site reads.</p>
+          </li>
+          <li>
+            <div class="stage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Done</div>
+            <p>One stable <code>master.m3u8</code> link. Copy it into any player.</p>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <section class="band">
-      <h2>Your storage, your keys</h2>
-      <p>iVault has no account and no server of its own. It talks only to the services you set up, using credentials kept in your operating system's keychain.</p>
-      <ul class="providers" aria-label="Supported storage">
-        <li>Cloudflare R2</li><li>Amazon S3</li><li>MinIO</li><li>Telegram</li><li>Google Drive</li><li>GitHub</li><li>OneDrive</li><li>WebDAV</li><li>Local folder / NAS</li>
-      </ul>
+    <section class="section">
+      <div class="container split">
+        <div class="section-head">
+          <h2>Your storage. Your keys.</h2>
+          <p>iVault has no account and no server of its own. It only talks to the services you set up.</p>
+          <ul class="providers" aria-label="Supported storage">
+            <li class="badge">Cloudflare R2</li><li class="badge">Amazon S3</li><li class="badge">MinIO</li>
+            <li class="badge">Telegram</li><li class="badge">Google Drive</li><li class="badge">GitHub</li>
+            <li class="badge">OneDrive</li><li class="badge">WebDAV</li><li class="badge">Local / NAS</li>
+          </ul>
+        </div>
+        <ul class="facts">
+          <li>
+            <span class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+            <b>Credentials stay in your keychain</b>
+            <p>Access keys, bot tokens and sign-ins live in Windows Credential Manager, macOS Keychain or the Linux Secret Service, never in plain files.</p>
+          </li>
+          <li>
+            <span class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <b>No telemetry</b>
+            <p>No analytics, crash reporting or tracking code. Your library and job history are a database on your computer.</p>
+          </li>
+          <li>
+            <span class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg></span>
+            <b>Only what you connect</b>
+            <p>Uploads go to your storage. TMDB lookups and Gemini translation use your own keys, and only when you ask.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Questions about setup, storage or your data?</h2>
+        <div class="actions">
+          <a class="btn btn-default" href="support/">Read the support guide</a>
+          <a class="btn btn-outline" href="privacy/">Privacy policy</a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
+  <footer class="site-footer">
+    <div class="container">
       <span>© 2026 iVaultkh · MIT License</span>
-      <span><a href="privacy/">Privacy policy</a> · <a href="support/">Support</a></span>
+      <nav aria-label="Footer"><a href="support/">Support</a><a href="privacy/">Privacy</a></nav>
     </div>
   </footer>
 </body>
