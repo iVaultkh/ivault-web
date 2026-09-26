@@ -574,3 +574,7 @@ kbd {
 .release-head time { color: var(--muted-foreground); font-size: 15px; }
 .release h3 { display: flex; align-items: center; gap: 8px; }
 .release h3 .icon { color: var(--primary); }
+.dl-one .dl-meta { font-weight: 400; opacity: 0.8; }
+.dl-one .dl-meta:empty { display: none; }
+.dl-other a { color: var(--link); font-weight: 500; }
+.dl-hint { display: block; }

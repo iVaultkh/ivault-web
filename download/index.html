@@ -50,9 +50,21 @@
         Microsoft's review passes, the listing URL shows "not found", so the
         button stays disabled and says why.
       -->
-      <section class="dl-grid" aria-label="Ways to get iVault">
-        <div class="card dl-card dl-recommended" id="store" data-store-live="false">
-          <span class="badge dl-tag">Recommended</span>
+      <section class="dl-grid" id="get" aria-label="Ways to get iVault">
+        <div class="card dl-card dl-recommended">
+          <h2>Direct download</h2>
+          <p>One click: the installer for your PC, picked automatically.</p>
+          <a class="btn btn-default dl-one" data-download href="https://github.com/iVaultkh/ivault-web/releases/latest">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+            <span class="dl-label">Download for Windows</span>
+            <span class="dl-meta tabular"></span>
+          </a>
+          <p class="dl-note" id="dl-status">Checking the latest release…</p>
+          <p class="dl-note dl-other">Other versions: <a id="dl-x64" href="https://github.com/iVaultkh/ivault-web/releases/latest">Windows x64</a> · <a id="dl-arm64" href="https://github.com/iVaultkh/ivault-web/releases/latest">Windows Arm64</a> <span class="dl-hint">(Arm64 is for Snapdragon PCs such as Surface Pro X and Copilot+)</span></p>
+        </div>
+
+        <div class="card dl-card" id="store" data-store-live="false">
+          <span class="badge dl-tag">No security warning</span>
           <h2>Microsoft Store</h2>
           <p>Signed by Microsoft, installs in one click and updates itself. No security warnings.</p>
           <a class="btn btn-default dl-store" href="https://apps.microsoft.com/detail/9PMVF5298D1D">
@@ -60,22 +72,6 @@
             Get it from Microsoft Store
           </a>
           <p class="dl-note" id="store-note">In Microsoft's review now. This button works as soon as the listing is live.</p>
-        </div>
-
-        <div class="card dl-card">
-          <h2>Direct download</h2>
-          <p>The installer, from our public GitHub releases. Most PCs are <b>x64</b>; choose <b>Arm64</b> for Surface Pro X, Copilot+ and other Snapdragon PCs.</p>
-          <div class="actions">
-            <a class="btn btn-outline" id="dl-x64" href="https://github.com/iVaultkh/ivault-web/releases/latest">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
-              Windows x64
-            </a>
-            <a class="btn btn-outline" id="dl-arm64" href="https://github.com/iVaultkh/ivault-web/releases/latest">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
-              Windows Arm64
-            </a>
-          </div>
-          <p class="dl-note" id="dl-status">Links go to the latest release on GitHub.</p>
         </div>
       </section>
 
@@ -102,7 +98,7 @@
     <aside class="toc" aria-label="On this page">
       <p>On this page</p>
       <ul>
-        <li><a href="#store">Get iVault</a></li>
+        <li><a href="#get">Get iVault</a></li>
         <li><a href="#before">Before you start</a></li>
         <li><a href="#other">macOS and Linux</a></li>
         <li><a href="#all">Older versions</a></li>
