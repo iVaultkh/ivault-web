@@ -3,15 +3,12 @@
 // blooms and the wordmark rises; then the whole card fades away.
 //
 // Loaded in <head> without defer so it can hide the page before first paint.
-// It plays once per browser session, is skipped by a click or any key, is
-// cut to a short still for reduced motion, and can never strand the page:
-// a failsafe removes the cover even if the rest of this file fails.
+// Like wuxia-web it plays on every load of the home page. It is skipped by a
+// click or any key, cut to a short still for reduced motion, and can never
+// strand the page: a failsafe removes the cover even if the rest of this
+// file fails.
 (function () {
   var root = document.documentElement;
-  var seen = false;
-  try { seen = sessionStorage.getItem('ivault-intro') === '1'; } catch (e) {}
-  if (seen) return;
-  try { sessionStorage.setItem('ivault-intro', '1'); } catch (e) {}
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   root.classList.add('intro-on');
