@@ -6,7 +6,22 @@
   <title>iVault Privacy Policy</title>
   <meta name="description" content="iVault's privacy policy: no account, no server, no telemetry. What stays on your computer, what goes to the services you connect, and what reaches us: nothing.">
   <script src="../assets/theme.js"></script>
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#0b0d14">
+  <link rel="canonical" href="https://ivaultkh.github.io/ivault-web/privacy/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="iVault">
+  <meta property="og:title" content="iVault Privacy Policy">
+  <meta property="og:description" content="iVault's privacy policy: no account, no server, no telemetry. What stays on your computer, what goes to the services you connect, and what reaches us: nothing.">
+  <meta property="og:url" content="https://ivaultkh.github.io/ivault-web/privacy/">
+  <meta property="og:image" content="https://ivaultkh.github.io/ivault-web/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="iVault: Convert once. Store anywhere. Stream everywhere.">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../assets/fonts.css">
   <link rel="stylesheet" href="../assets/site.css">
 </head>
@@ -131,12 +146,12 @@
             <table>
               <thead><tr><th scope="col">Service</th><th scope="col">When</th><th scope="col">What is sent</th></tr></thead>
               <tbody>
-                <tr><td>Your storage provider<small>Cloudflare R2, Amazon S3, MinIO, WebDAV, GitHub (and jsDelivr for public GitHub links), Google Drive, OneDrive or Telegram</small></td><td>When you connect it and when you upload</td><td>Your encoded video segments, playlists and file lists, with the credentials you entered for that provider.</td></tr>
-                <tr><td>Google or Microsoft sign-in</td><td>When you connect Google Drive or OneDrive</td><td>A standard OAuth sign-in in your browser. The reply comes back to the app on your own computer (127.0.0.1); iVault keeps only the resulting token, in the keychain.</td></tr>
-                <tr><td>The Movie Database (TMDB)</td><td>When you search for a series, with your own TMDB key</td><td>Your search text. Posters and details come back.</td></tr>
-                <tr><td>Google Gemini</td><td>When you ask for a Khmer title and description, with your own Gemini key</td><td>The English title and overview of that series. The generated text is a suggestion you review before saving.</td></tr>
-                <tr><td>Your website<small>For example WordPress or a catalog repository</small></td><td>When you publish</td><td>The series details and the stream link you chose to publish.</td></tr>
-                <tr><td>FFmpeg download sites<small>evermeet.cx on macOS, johnvansickle.com on Linux</small></td><td>Only if you ask iVault to download FFmpeg. On Windows you download it yourself</td><td>An ordinary file download request.</td></tr>
+                <tr><td><svg class="icon svc" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><path d="M6 16h.01M10 16h.01"/></svg>Your storage provider<small>Cloudflare R2, Amazon S3, MinIO, WebDAV, GitHub (and jsDelivr for public GitHub links), Google Drive, OneDrive or Telegram</small></td><td>When you connect it and when you upload</td><td>Your encoded video segments, playlists and file lists, with the credentials you entered for that provider.</td></tr>
+                <tr><td><svg class="icon svc" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>Google or Microsoft sign-in</td><td>When you connect Google Drive or OneDrive</td><td>A standard OAuth sign-in in your browser. The reply comes back to the app on your own computer (127.0.0.1); iVault keeps only the resulting token, in the keychain.</td></tr>
+                <tr><td><i class="brand-logo svc" style="--logo:url(brands/themoviedatabase.svg)" aria-hidden="true"></i>The Movie Database (TMDB)</td><td>When you search for a series, with your own TMDB key</td><td>Your search text. Posters and details come back.</td></tr>
+                <tr><td><i class="brand-logo svc" style="--logo:url(brands/googlegemini.svg)" aria-hidden="true"></i>Google Gemini</td><td>When you ask for a Khmer title and description, with your own Gemini key</td><td>The English title and overview of that series. The generated text is a suggestion you review before saving.</td></tr>
+                <tr><td><svg class="icon svc" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>Your website<small>For example WordPress or a catalog repository</small></td><td>When you publish</td><td>The series details and the stream link you chose to publish.</td></tr>
+                <tr><td><i class="brand-logo svc" style="--logo:url(brands/ffmpeg.svg)" aria-hidden="true"></i>FFmpeg download sites<small>evermeet.cx on macOS, johnvansickle.com on Linux</small></td><td>Only if you ask iVault to download FFmpeg. On Windows you download it yourself</td><td>An ordinary file download request.</td></tr>
               </tbody>
             </table>
           </div>
@@ -191,7 +206,7 @@
   <footer class="site-footer">
     <div class="container">
       <span>© 2026 iVaultkh · MIT License</span>
-      <nav aria-label="Footer"><a href="../">Home</a><a href="../support/">Support</a></nav>
+      <nav aria-label="Footer"><a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .71-1.53l7-6a2 2 0 0 1 2.58 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a><a href="../support/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24m5.66 0 4.24-4.24m-4.24 9.9 4.24 4.24m-9.9 0-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>Support</a><a href="../privacy/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Privacy</a><a href="https://github.com/iVaultkh/ivault-web"><i class="brand-logo" style="--logo:url(brands/github.svg)" aria-hidden="true"></i>GitHub</a></nav>
     </div>
   </footer>
 </body>

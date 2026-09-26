@@ -307,8 +307,8 @@ p { text-wrap: pretty; }
 }
 .accordion summary::-webkit-details-marker { display: none; }
 .accordion summary:hover { text-decoration: underline; }
-.accordion summary .icon { color: var(--muted-foreground); transition: transform 200ms var(--ease-out); }
-.accordion details[open] summary .icon { transform: rotate(180deg); }
+.accordion summary > .icon { color: var(--muted-foreground); transition: transform 200ms var(--ease-out); }
+.accordion details[open] summary > .icon { transform: rotate(180deg); }
 .accordion .panel { padding: 0 0 18px; }
 .accordion .panel p { margin: 0 0 10px; }
 .accordion .panel ol { margin: 0; }
@@ -421,3 +421,35 @@ p { text-wrap: pretty; }
 .contact-card p { margin: 0; }
 .contact-card .who { font-weight: 600; color: var(--foreground); }
 @media (max-width: 640px) { .contact-card { grid-template-columns: 1fr; } }
+
+/* ---------- display face, icons, brand marks ---------- */
+:root { --font-display: "Bricolage Grotesque", var(--font-sans); }
+.hero h1, .section h2, .cta-band h2, .policy-hero h1, .prose h1, .policy .prose h2 {
+  font-family: var(--font-display); font-optical-sizing: auto;
+}
+.hero h1, .policy-hero h1 { font-weight: 700; letter-spacing: -0.035em; }
+.section h2, .cta-band h2, .prose h1, .policy .prose h2 { font-weight: 650; letter-spacing: -0.02em; }
+.cta-band h2 { line-height: 1.15; }
+
+/* Simple Icons marks (CC0), tinted like every other icon via a mask.
+   --logo URLs are written relative to this stylesheet: a url() in a custom
+   property resolves where it is used, here, not in the page. */
+.brand-logo {
+  display: inline-block; flex: none; width: 14px; height: 14px; background: currentColor;
+  -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat;
+}
+.providers .provider { gap: 7px; padding: 4px 10px; font-size: 13px; }
+.providers .provider .icon { width: 14px; height: 14px; }
+.providers .provider .brand-logo, .providers .provider .icon { color: var(--muted-foreground); transition: color 150ms; }
+.providers .provider:hover .brand-logo, .providers .provider:hover .icon { color: var(--primary); }
+
+.accordion .q { display: inline-flex; align-items: center; gap: 12px; }
+.accordion .lead {
+  width: 16px; height: 16px; color: var(--primary);
+}
+.table-wrap td .svc { width: 15px; height: 15px; margin-right: 8px; vertical-align: -2px; color: var(--primary); }
+.table-wrap td small { margin-left: 23px; }
+
+.site-footer nav { flex-wrap: wrap; gap: 8px 20px; }
+.site-footer nav a { display: inline-flex; align-items: center; gap: 6px; }
+.site-footer nav .icon, .site-footer nav .brand-logo { width: 14px; height: 14px; }

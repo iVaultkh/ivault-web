@@ -6,7 +6,22 @@
   <title>iVault Support</title>
   <meta name="description" content="Get help with iVault: report a problem, ask a question, and answers to common setup questions.">
   <script src="../assets/theme.js"></script>
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#0b0d14">
+  <link rel="canonical" href="https://ivaultkh.github.io/ivault-web/support/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="iVault">
+  <meta property="og:title" content="iVault Support">
+  <meta property="og:description" content="Get help with iVault: report a problem, ask a question, and answers to common setup questions.">
+  <meta property="og:url" content="https://ivaultkh.github.io/ivault-web/support/">
+  <meta property="og:image" content="https://ivaultkh.github.io/ivault-web/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="iVault: Convert once. Store anywhere. Stream everywhere.">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../assets/fonts.css">
   <link rel="stylesheet" href="../assets/site.css">
 </head>
@@ -45,7 +60,7 @@
       <h2 id="faq">Common questions</h2>
       <div class="accordion">
         <details open>
-          <summary>iVault says FFmpeg is missing<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <summary><span class="q"><svg class="icon lead" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18M3 7.5h4M3 12h18M3 16.5h4M17 3v18M17 7.5h4M17 16.5h4"/></svg>iVault says FFmpeg is missing</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
           <div class="panel">
             <p>iVault encodes video with FFmpeg on your computer.</p>
             <ol>
@@ -55,7 +70,7 @@
           </div>
         </details>
         <details>
-          <summary>How do I connect Telegram?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <summary><span class="q"><i class="brand-logo lead" style="--logo:url(brands/telegram.svg)" aria-hidden="true"></i>How do I connect Telegram?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
           <div class="panel">
             <ol>
               <li>Create a bot with <a href="https://t.me/BotFather">@BotFather</a> and copy its token.</li>
@@ -66,15 +81,15 @@
           </div>
         </details>
         <details>
-          <summary>Uploads to Telegram are slow<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <summary><span class="q"><svg class="icon lead" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>Uploads to Telegram are slow</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
           <div class="panel"><p>Telegram limits bots to roughly 20 messages a minute and about 20 MB per downloadable file. iVault stays under those limits on purpose, so a long episode takes a while. The job resumes where it stopped if you close the app.</p></div>
         </details>
         <details>
-          <summary>A job failed halfway<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <summary><span class="q"><svg class="icon lead" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>A job failed halfway</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
           <div class="panel"><p>Every stage is checkpointed. Press Retry on the job: iVault skips encoding and segments that already uploaded.</p></div>
         </details>
         <details>
-          <summary>Where is my data?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <summary><span class="q"><svg class="icon lead" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>Where is my data?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
           <div class="panel"><p>On your computer, and in the storage you connected. See the <a href="../privacy/">privacy policy</a> for details.</p></div>
         </details>
       </div>
@@ -93,7 +108,7 @@
   <footer class="site-footer">
     <div class="container">
       <span>© 2026 iVaultkh · MIT License</span>
-      <nav aria-label="Footer"><a href="../">Home</a><a href="../privacy/">Privacy</a></nav>
+      <nav aria-label="Footer"><a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .71-1.53l7-6a2 2 0 0 1 2.58 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a><a href="../support/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24m5.66 0 4.24-4.24m-4.24 9.9 4.24 4.24m-9.9 0-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>Support</a><a href="../privacy/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Privacy</a><a href="https://github.com/iVaultkh/ivault-web"><i class="brand-logo" style="--logo:url(brands/github.svg)" aria-hidden="true"></i>GitHub</a></nav>
     </div>
   </footer>
 </body>
