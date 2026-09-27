@@ -578,3 +578,13 @@ kbd {
 .dl-one .dl-meta:empty { display: none; }
 .dl-other a { color: var(--link); font-weight: 500; }
 .dl-hint { display: block; }
+
+/* The guide: the same numbered layout, lettered A to Z. */
+.guide .toc a::before { content: counter(toc, upper-alpha); }
+.guide .prose h2::before { content: counter(sec, upper-alpha); }
+
+/* Three header links (Download, Guide, Support) fit a 360px phone. */
+@media (max-width: 400px) {
+  .site-header .container { gap: 8px; }
+  .nav a { padding: 6px 6px; font-size: 13px; }
+}

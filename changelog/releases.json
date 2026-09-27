@@ -1,5 +1,21 @@
 [
   {
+    "version": "1.2.0",
+    "date": "2026-09-27",
+    "summary": "Remove a subtitle language, subtitles on Telegram videos, and a GitHub Test that catches read-only tokens.",
+    "features": [
+      "Remove a subtitle language from a video that is already online. In Add subtitles…, each language has a Remove button; the stream link stays the same.",
+      "Add or remove subtitles on Telegram videos. Telegram stores the changed playlist as a new file, so the video gets a new stream link: copy it again and re-export your catalog.",
+      "A new A to Z guide on this website, from installing iVault to sharing a link."
+    ],
+    "fixes": [
+      "GitHub: Test now checks that the token can push, not only read. A read-only token (for example a fine-grained token with Contents: Read-only) used to pass Test and then fail every upload with “Permission denied … 403”. It now fails Test with the reason, and a refused push says how to fix the token."
+    ],
+    "notes": [
+      "Seeing “Permission to … denied” on GitHub? Give the token Contents: Read and write (or the classic repo scope), paste it again under Storage → Edit, press Test, then Resume the video. Its converted files are kept."
+    ]
+  },
+  {
     "version": "1.1.0",
     "date": "2026-09-27",
     "summary": "The version on the Microsoft Store. The app itself is the same as 1.0.0.",

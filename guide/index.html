@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iVault Guide</title>
+  <meta name="description" content="iVault from A to Z: install, FFmpeg, connect a storage, convert your first video, share the link, add subtitles, publish a series, fix problems and stay up to date.">
+  <script src="../assets/theme.js"></script>
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#0b0d14">
+  <link rel="canonical" href="https://ivaultkh.github.io/ivault-web/guide/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="iVault">
+  <meta property="og:title" content="iVault Guide: from A to Z">
+  <meta property="og:description" content="Install, connect a storage, convert your first video, share the link, add subtitles, publish a series and fix problems.">
+  <meta property="og:url" content="https://ivaultkh.github.io/ivault-web/guide/">
+  <meta property="og:image" content="https://ivaultkh.github.io/ivault-web/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="iVault: Convert once. Store anywhere. Stream everywhere.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../assets/fonts.css">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="../"><img src="../assets/logo.svg" alt="" width="24" height="24">iVault</a>
+      <nav class="nav" aria-label="Site">
+        <a class="wide" href="../#how">How it works</a>
+        <a href="../download/">Download</a>
+        <a href="./" aria-current="page">Guide</a>
+        <a class="wide" href="../changelog/">Changelog</a>
+        <a href="../support/">Support</a>
+        <a class="wide" href="../privacy/">Privacy</a>
+      </nav>
+      <button class="btn btn-ghost btn-icon theme-toggle" type="button" aria-label="Toggle light and dark theme">
+        <svg class="icon moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="icon sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-17.07 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="policy-hero" aria-labelledby="title">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../">iVault</a>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:14px;height:14px"><path d="m9 18 6-6-6-6"/></svg>
+          <span aria-current="page">Guide</span>
+        </nav>
+        <h1 id="title">iVault from A to Z.</h1>
+        <p class="lede">From installing the app to a stream link your viewers can play, in the order you'll do it. Each step takes a few minutes; the <a href="../support/">Help page</a> has the details behind every one.</p>
+        <ul class="policy-meta">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated <b><time datetime="2026-09-27">27 September 2026</time></b></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>For iVault <b>1.2.0</b></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>About <b>30 minutes</b> start to finish, plus conversion time</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container policy guide">
+      <nav class="toc" aria-label="Steps">
+        <p>Steps</p>
+        <ol>
+          <li><a href="#get">Get iVault</a></li>
+          <li><a href="#setup">First launch</a></li>
+          <li><a href="#ffmpeg">Install FFmpeg</a></li>
+          <li><a href="#choose">Choose a storage</a></li>
+          <li><a href="#connect">Connect it</a></li>
+          <li><a href="#test">Test it</a></li>
+          <li><a href="#convert">Convert a video</a></li>
+          <li><a href="#progress">Follow the progress</a></li>
+          <li><a href="#share">Copy and share the link</a></li>
+          <li><a href="#subtitles">Subtitles and thumbnails</a></li>
+          <li><a href="#catalog">Series and catalog</a></li>
+          <li><a href="#batches">Whole seasons</a></li>
+          <li><a href="#fix">When something fails</a></li>
+          <li><a href="#another-pc">Another computer</a></li>
+          <li><a href="#update">Stay up to date</a></li>
+        </ol>
+      </nav>
+
+      <article class="prose">
+        <section id="get">
+          <h2>Get iVault</h2>
+          <p>iVault runs on Windows 10 (version 1809 or later) and Windows 11, on x64 and Arm64 PCs. Two ways to install it:</p>
+          <ul>
+            <li><strong>Microsoft Store</strong>: search for <em>iVaultkh</em>. No warning on first run, and it updates itself.</li>
+            <li><strong>Direct installer</strong>: press the button on the <a href="../download/">Download</a> page; it picks x64 or Arm64 for your PC. The installer isn't code-signed yet, so SmartScreen warns the first time: click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+          </ul>
+          <p>Run the installer and open iVault from the Start menu.</p>
+        </section>
+
+        <section id="setup">
+          <h2>First launch</h2>
+          <p>The first time iVault opens, a short setup walks through <strong>Welcome</strong>, <strong>FFmpeg</strong>, <strong>Storage</strong>, <strong>Catalog</strong> and <strong>Finish</strong>. Follow it along with steps C to F below, or press <strong>Skip setup</strong> and do the same later from the Settings and Storage screens.</p>
+          <p>To see it again: <strong>Settings → General → Run setup again</strong>. Nothing is reset.</p>
+        </section>
+
+        <section id="ffmpeg">
+          <h2>Install FFmpeg</h2>
+          <p>iVault converts video with FFmpeg, which is free but not bundled.</p>
+          <ol>
+            <li>Open <strong>Settings → Conversion</strong> and press <strong>Open gyan.dev</strong> (or go to <a href="https://www.gyan.dev/ffmpeg/builds/">gyan.dev/ffmpeg/builds</a>).</li>
+            <li>Download the <strong>release essentials</strong> zip and unzip it somewhere permanent, such as <code>C:\ffmpeg</code>.</li>
+            <li>Next to <strong>FFmpeg folder</strong> press <strong>Choose…</strong> and pick the <code>bin</code> folder, the one that holds <code>ffmpeg.exe</code> and <code>ffprobe.exe</code>.</li>
+          </ol>
+          <p>The status turns to <strong>Found</strong>. Still “Not found”? See <a href="../support/#ffmpeg-not-found">the FFmpeg checklist</a>.</p>
+        </section>
+
+        <section id="choose">
+          <h2>Choose a storage</h2>
+          <p>iVault uploads to storage you already own; the stream link points there. Pick one to start, and add more later.</p>
+          <div class="table-wrap"><table>
+            <thead><tr><th scope="col">Storage</th><th scope="col">Good for</th><th scope="col">Keep in mind</th></tr></thead>
+            <tbody>
+              <tr><td>Cloudflare R2, Amazon S3, MinIO</td><td>Public streaming. The recommended choice.</td><td>The bucket needs a public URL.</td></tr>
+              <tr><td>GitHub <small>served by jsDelivr</small></td><td>Free hosting for small episodes.</td><td>20 MB per file; needs git installed and a token that can push.</td></tr>
+              <tr><td>Telegram</td><td>Free, with just a bot and a channel.</td><td>One quality per video, about 20 files a minute, 20 MB per file.</td></tr>
+              <tr><td>Local folder or NAS</td><td>Your own web server.</td><td>The public URL must really serve that folder.</td></tr>
+              <tr><td>WebDAV</td><td>Nextcloud, ownCloud, a NAS.</td><td>Use https:// outside your own network.</td></tr>
+              <tr><td>Google Drive, OneDrive</td><td>An archive or a small audience.</td><td>Advanced: needs your own app registration and an edge Worker.</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section id="connect">
+          <h2>Connect it</h2>
+          <p>On the <strong>Storage</strong> screen press <strong>Add storage</strong>, choose the kind, give it a <strong>Name</strong> and fill in its fields. Each kind has its own walkthrough on the Help page: <a href="../support/#s3">R2 / S3 / MinIO</a>, <a href="../support/#github">GitHub</a>, <a href="../support/#telegram">Telegram</a>, <a href="../support/#local">Local / NAS</a>, <a href="../support/#webdav">WebDAV</a>, <a href="../support/#google-drive">Google Drive</a>, <a href="../support/#onedrive">OneDrive</a>.</p>
+          <p>Keys, passwords and tokens go to your computer's keychain (Windows Credential Manager), never to iVault's database.</p>
+          <h3 id="github-token">A GitHub token that can push</h3>
+          <p>GitHub is the one people most often get half right: a token that can <em>read</em> the repository is not enough, iVault has to <em>push</em> to it.</p>
+          <ol>
+            <li>On github.com open <strong>Settings → Developer settings → Personal access tokens</strong>.</li>
+            <li><strong>Fine-grained token</strong> (recommended): <strong>Generate new token</strong>. Under <strong>Repository access</strong> choose <em>Only select repositories</em> and pick your video repository. Under <strong>Permissions → Repository permissions</strong> set <strong>Contents</strong> to <strong>Read and write</strong>. Generate it and copy it.</li>
+            <li><strong>Classic token</strong> (the alternative): <strong>Generate new token (classic)</strong>, tick the <strong>repo</strong> scope, generate and copy it.</li>
+            <li>In iVault, choose <strong>HTTPS token</strong> under <strong>Authentication</strong> and paste the token into <strong>Personal access token</strong>.</li>
+          </ol>
+          <p>On Windows, GitHub also needs <a href="https://git-scm.com/download/win">Git for Windows</a> installed.</p>
+        </section>
+
+        <section id="test">
+          <h2>Test it</h2>
+          <p>Saving tests the storage, and you can press <strong>Test</strong> on its card at any time. <strong>Connected</strong> means iVault could write there; for GitHub that includes a dry-run push, which changes nothing in the repository. A failed test says why, for example a key without write access, and videos already uploaded keep playing.</p>
+          <p>Use <strong>Set as default</strong> in the card's <strong>⋯</strong> menu to choose where new videos go.</p>
+        </section>
+
+        <section id="convert">
+          <h2>Convert a video</h2>
+          <ol>
+            <li>Press <strong>New Video</strong> (<kbd>Ctrl</kbd> <kbd>N</kbd>), or drop video files anywhere on the window.</li>
+            <li><strong>Source</strong>: add files and give each a <strong>Title</strong>. Series, episode, subtitles and poster are optional.</li>
+            <li><strong>Quality</strong>: keep the sizes you want, 360p to 1080p. Sizes taller than your source are skipped; iVault never upscales.</li>
+            <li><strong>Storage</strong>: choose where it goes.</li>
+            <li><strong>Review</strong>: press <strong>Convert &amp; upload</strong>.</li>
+          </ol>
+          <p>It accepts mp4, mkv, mov, avi, webm, m4v and ts, and produces HLS (H.264 and AAC).</p>
+        </section>
+
+        <section id="progress">
+          <h2>Follow the progress</h2>
+          <p>You can leave the New Video screen as soon as the videos are queued; the work shows on the <strong>Dashboard</strong> and <strong>Library</strong>. Each video goes <strong>Queued → Analysing → Converting → Uploading → Verifying → Ready</strong>.</p>
+          <ul>
+            <li><strong>Pause</strong>, <strong>Resume</strong> and <strong>Stop</strong> are in the video's <strong>⋯</strong> menu in the Library.</li>
+            <li>Several at once: <strong>Settings → Conversion → Convert at once</strong>. For speed, set <strong>Encoding effort</strong> to <em>Fast</em>.</li>
+            <li>Quitting while converting asks first. Uploads carry on next time; a conversion that was running starts again.</li>
+          </ul>
+        </section>
+
+        <section id="share">
+          <h2>Copy and share the link</h2>
+          <p>When a video is <strong>Ready</strong>, open its <strong>⋯</strong> menu in the Library and choose <strong>Copy stream URL</strong>, or open it and press <strong>Copy URL</strong>. That <code>master.m3u8</code> link plays in any HLS player: your website's player, Safari, or VLC (<strong>Media → Open Network Stream</strong>).</p>
+          <p><strong>Preview</strong> plays it inside iVault, and <strong>Open in browser</strong> shows it on the storage. Anyone with the link can watch, and it keeps working even if you remove the video from iVault.</p>
+        </section>
+
+        <section id="subtitles">
+          <h2>Subtitles and thumbnails</h2>
+          <p>You can add them while converting, or afterwards from the video's <strong>⋯</strong> menu:</p>
+          <ul>
+            <li><strong>Add subtitles…</strong>: add .srt, .vtt or .txt files, one per language. The same dialog <strong>removes</strong> a language.</li>
+            <li><strong>Upload thumbnail…</strong>: a jpg, png or webp poster.</li>
+          </ul>
+          <p>On R2, S3, GitHub, a NAS or WebDAV the link stays the same. On <strong>Telegram</strong> a subtitle change gives the video a <strong>new link</strong>: copy it again and re-export your catalog. On Google Drive and OneDrive, changing a finished video means <strong>Re-convert…</strong>.</p>
+        </section>
+
+        <section id="catalog">
+          <h2>Series and catalog</h2>
+          <p>Only needed if you publish to a wuxia-web site; skip it if you just want stream links.</p>
+          <ol>
+            <li>In <strong>Settings → Catalog</strong>, set your wuxia-web <code>db</code> folder, and optionally a TMDB token and a Gemini key (<a href="../support/#api-keys">where to get them</a>).</li>
+            <li>On the <strong>Catalog</strong> screen press <strong>New series</strong>. <strong>Look up on TMDB</strong> fills in the poster and details; <strong>Translate to Khmer</strong> drafts the Khmer text. Review, then <strong>Save series</strong>.</li>
+            <li>When converting, pick the series and episode in the file table.</li>
+            <li>Open the series and press <strong>Export to wuxia-web</strong>. iVault writes the files in that folder; review them with <code>git diff</code>, then commit and deploy your site as usual.</li>
+          </ol>
+        </section>
+
+        <section id="batches">
+          <h2>Whole seasons</h2>
+          <p>Drop a whole season into <strong>New Video</strong> at once and set the series for all of them with <strong>Also use it for the other files in this batch</strong>. The <strong>Batches</strong> screen runs them in order and shows every episode's stage on one board, and you can pause or resume the whole batch.</p>
+        </section>
+
+        <section id="fix">
+          <h2>When something fails</h2>
+          <p>Open the failed video and read the card at the top.</p>
+          <ul>
+            <li><strong>Failed while uploading or verifying</strong>: it says <em>Your converted files are safe</em>. Fix the cause, then press <strong>Resume</strong>: only what's missing is uploaded, nothing is converted again.</li>
+            <li><strong>Failed while reading or converting</strong>: check the file plays in a video player, then press <strong>Retry</strong>.</li>
+            <li><strong>“Permission to … denied” with a 403 on GitHub</strong>: the token can read but not push. Give it write access (<a href="#github-token">step E</a>), paste it again under <strong>Storage → Edit</strong>, press <strong>Test</strong>, then <strong>Resume</strong>.</li>
+          </ul>
+          <p>Every message is explained under <a href="../support/#errors">Error messages</a>. Asking for help? Open the job's <strong>Logs</strong> tab, press <strong>Copy logs</strong>, remove any keys, and <a href="https://github.com/iVaultkh/ivault-web/issues/new">open an issue</a>.</p>
+        </section>
+
+        <section id="another-pc">
+          <h2>Another computer</h2>
+          <p>Keys and tokens live in each computer's own keychain, so a second PC doesn't have them. On the new computer, add the storage again and paste the key or token. For GitHub, make sure it's a token that can push (<a href="#github-token">step E</a>), not an older read-only one, and press <strong>Test</strong>.</p>
+        </section>
+
+        <section id="update">
+          <h2>Stay up to date</h2>
+          <p>The Store version updates itself. With the direct installer, download the new version from the <a href="../download/">Download</a> page and run it over the old one; your library, storages and settings are kept. <a href="../changelog/">The changelog</a> lists what each version changed, and <strong>Settings → About</strong> shows which one you have.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 iVaultkh · MIT License</span>
+      <nav aria-label="Footer"><a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .71-1.53l7-6a2 2 0 0 1 2.58 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a><a href="../download/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>Download</a><a href="./"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>Guide</a><a href="../changelog/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h.01M3 18h.01M3 6h.01M8 12h13M8 18h13M8 6h13"/></svg>Changelog</a><a href="../support/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24m5.66 0 4.24-4.24m-4.24 9.9 4.24 4.24m-9.9 0-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>Support</a><a href="../privacy/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Privacy</a><a href="https://github.com/iVaultkh/ivault-web"><i class="brand-logo" style="--logo:url(brands/github.svg)" aria-hidden="true"></i>GitHub</a></nav>
+    </div>
+  </footer>
+</body>
+</html>
