@@ -1,8 +1,21 @@
 [
   {
+    "version": "1.1.0",
+    "date": "2026-09-27",
+    "summary": "The version on the Microsoft Store. The app itself is the same as 1.0.0.",
+    "features": [
+      "The Microsoft Store version, for Windows 10 and 11 on x64 and Arm64. Installs from the Store update themselves.",
+      "One-click download on this website: the Download button picks the right installer for your PC."
+    ],
+    "fixes": [],
+    "notes": [
+      "If you installed 1.0.0 from the direct installer, you do not need to update: nothing in the app changed."
+    ]
+  },
+  {
     "version": "1.0.0",
     "date": "2026-09-26",
-    "summary": "The first public release, and the first on the Microsoft Store.",
+    "summary": "The first public release.",
     "features": [
       "Storage you already have: Amazon S3, Cloudflare R2 and MinIO, a local folder or NAS, Telegram, GitHub (served through jsDelivr), Google Drive, OneDrive and WebDAV. Use several, and pick one per video.",
       "Move a published video from one storage to another.",
