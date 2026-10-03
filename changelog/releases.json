@@ -1,5 +1,20 @@
 [
   {
+    "version": "1.2.1",
+    "date": "2026-10-03",
+    "summary": "iVault opens straight into the app: the lock screen is now optional and off by default.",
+    "features": [
+      "Optional app lock with a password of your own: Settings → General → Privacy. When it is on, iVault asks for the password each time it opens and on Ctrl+L. Only a salted hash of the password is kept on your computer."
+    ],
+    "fixes": [
+      "iVault no longer opens on a lock screen with a built-in username and password that the app never told you. A fresh install now goes straight to setup.",
+      "Forgot your lock password? “Forgot password?” on the lock screen turns the lock off, so you are never shut out of your own app."
+    ],
+    "notes": [
+      "The lock hides the window only. It does not encrypt your library, settings or videos."
+    ]
+  },
+  {
     "version": "1.2.0",
     "date": "2026-09-27",
     "summary": "Remove a subtitle language, subtitles on Telegram videos, and a GitHub Test that catches read-only tokens.",
